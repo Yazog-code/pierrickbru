@@ -1,46 +1,34 @@
-// script.js
+/* MENU MOBILE */
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav-links');
 
-// Menu Mobile
-const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
-
+if (burger && nav) {
     burger.addEventListener('click', () => {
-        // Toggle Nav
         nav.classList.toggle('nav-active');
-
-        // Animation des liens
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-            }
-        });
-
-        // Animation du burger
-        burger.classList.toggle('toggle');
+        burger.setAttribute(
+            'aria-expanded',
+            nav.classList.contains('nav-active')
+        );
     });
 }
 
-// Gestion simple du formulaire (Simulation)
+/* NAVBAR SCROLL EFFECT */
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+/* FORMULAIRE */
 const form = document.getElementById('contactForm');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert("Merci ! Votre demande de devis a bien été envoyée. Nous vous recontacterons sous 48h.");
-    form.reset();
-});
-
-// Smooth Scroll pour les ancres (pour compatibilité anciens navigateurs)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    addEventListener('click', function (e) {
+if (form) {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        alert("Merci ! Votre demande a bien été envoyée. Nous vous recontactons sous 48h.");
+        form.reset();
     });
-});
-
-// Lancer les fonctions
-navSlide();
+}
