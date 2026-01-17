@@ -3,120 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeinturePro – Artisan Peintre à Paris</title>
 
-    <title>Artisan Peintre à Paris | Devis Gratuit sous 48h</title>
-    <meta name="description" content="Artisan peintre professionnel à Paris et Île-de-France. Rénovation intérieure, façade, sols. Devis gratuit sous 48h.">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Schema SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "PeinturePro",
-      "areaServed": "Île-de-France",
-      "telephone": "0600000000",
-      "email": "contact@peinturepro.fr"
-    }
-    </script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav class="navbar" role="navigation">
-    <div class="container">
-        <a href="#accueil" class="logo">Peinture<span>Pro</span></a>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">Peinture<span>Pro</span></div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#realisations">Réalisations</a>
+            <a href="#contact" class="btn-nav">Devis gratuit</a>
+        </nav>
+    </header>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Réalisations</a></li>
-            <li><a href="#contact" class="btn-nav">Devis Gratuit</a></li>
-        </ul>
+    <!-- HERO -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
 
-        <button class="burger" aria-label="Menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
-</nav>
+            <!-- LOGO HERO -->
+            <img src="logo-peinturepro.svg" alt="Logo PeinturePro" class="hero-logo">
 
-<header id="accueil" class="hero">
-    <div class="hero-content">
-        <h1>Artisan Peintre Professionnel à Paris</h1>
-        <p>Rénovation intérieure, façade et décoration. Travail soigné & garanti.</p>
+            <h1>Artisan Peintre Professionnel à Paris</h1>
+            <p>Rénovation intérieure, façade et décoration. Travail soigné & garanti.</p>
 
-        <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Devis gratuit</a>
-            <a href="#portfolio" class="btn btn-secondary">Voir les réalisations</a>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Devis gratuit</a>
+                <a href="#realisations" class="btn btn-secondary">Voir les réalisations</a>
+            </div>
+
+            <div class="badges">
+                <span><i class="fas fa-check-circle"></i> Garantie décennale</span>
+                <span><i class="fas fa-check-circle"></i> Réponse sous 48h</span>
+            </div>
+
         </div>
+    </section>
 
-        <div class="badges">
-            <span><i class="fas fa-check-circle"></i> Garantie décennale</span>
-            <span><i class="fas fa-check-circle"></i> Réponse sous 48h</span>
+    <!-- RÉALISATIONS -->
+    <section id="realisations">
+        <h2 class="section-title">Nos réalisations</h2>
+
+        <div class="realisations-grid">
+            <div class="realisation"><img src="real1.jpg" alt=""></div>
+            <div class="realisation"><img src="real2.jpg" alt=""></div>
+            <div class="realisation"><img src="real3.jpg" alt=""></div>
+            <div class="realisation"><img src="real4.jpg" alt=""></div>
         </div>
-    </div>
-</header>
+    </section>
 
-<section id="services" class="section">
-    <div class="container">
-        <h2 class="section-title">Mes services</h2>
-
-        <div class="services-grid">
-            <article class="card">
-                <i class="fas fa-paint-roller"></i>
-                <h3>Peinture intérieure</h3>
-                <p>Murs, plafonds, boiseries – finitions haut de gamme.</p>
-            </article>
-
-            <article class="card">
-                <i class="fas fa-home"></i>
-                <h3>Ravalement de façade</h3>
-                <p>Nettoyage, réparation et protection durable.</p>
-            </article>
-
-            <article class="card">
-                <i class="fas fa-brush"></i>
-                <h3>Revêtements de sol</h3>
-                <p>Parquet, PVC, moquette, vitrification.</p>
-            </article>
-
-            <article class="card">
-                <i class="fas fa-water"></i>
-                <h3>Dégâts des eaux</h3>
-                <p>Intervention rapide & dossiers assurances.</p>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section id="portfolio" class="section bg-light">
-    <div class="container">
-        <h2 class="section-title">Réalisations récentes</h2>
-
-        <div class="gallery-grid">
-    <div class="gallery-item">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1562259949-e8e6003a6408" alt="Peinture salon moderne">
-    </div>
-    <div class="gallery-item">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f" alt="Chambre rénovée">
-    </div>
-    <div class="gallery-item">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1595846519845-68e298c2edd8" alt="Ravalement façade">
-    </div>
-</div>
-
-    </div>
-</section>
-
-<section id="contact" class="section">
-    <div class="container contact-wrapper">
-
-        <div class="contact-info">
-            <h2>Demandez votre devis</h2>
-            <p>Réponse rapide et sans engagement.</p>
-            <ul>
-                <li><i class="fas fa-phone"></i> 06 00 00 00 00</li>
-                <li><i class="fas fa-envelope"></i> contact@peinturepro.fr</li>
-                <li><i class="fas fa-map-marker-alt"></i> Île-de-France</li>
+</body>
+</html>
