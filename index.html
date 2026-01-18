@@ -2,90 +2,94 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <title>PeinturePro – Artisan peintre</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeinturePro – Artisan Peintre</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-    <div class="logo">Peinture<span>Pro</span></div>
+<!-- HEADER -->
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">Peinture<span>Pro</span></div>
 
-    <button class="burger" aria-label="Ouvrir le menu">
-        <span></span><span></span><span></span>
-    </button>
+        <nav class="nav-desktop">
+            <a href="#services">Services</a>
+            <a href="#realisations">Réalisations</a>
+            <a href="#contact" class="btn small">Devis</a>
+        </nav>
+
+        <button class="burger" id="burger">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
 </header>
 
-<!-- MENU MOBILE SLIDE -->
-<nav class="mobile-nav">
-    <a href="#accueil">Accueil</a>
+<!-- MENU MOBILE -->
+<nav class="nav-mobile" id="navMobile">
     <a href="#services">Services</a>
     <a href="#realisations">Réalisations</a>
-    <a href="#contact" class="btn-mobile">Devis gratuit</a>
+    <a href="#contact" class="btn">Demander un devis</a>
 </nav>
 
-<!-- OVERLAY -->
-<div class="overlay"></div>
-
 <!-- HERO -->
-<section class="hero reveal" id="accueil">
-    <div class="hero-content">
-        <img src="logo-peinturepro.svg" class="hero-logo" alt="PeinturePro">
-        <h1>Artisan Peintre à Paris</h1>
-        <p>Rénovation • Façade • Décoration</p>
-        <a href="#contact" class="btn btn-primary">Demander un devis</a>
+<section class="hero">
+    <div class="hero-content reveal">
+        <img src="logo-peinturepro.svg" alt="PeinturePro" class="hero-logo"
+             onerror="this.style.display='none'">
+
+        <h1>Artisan peintre à Paris</h1>
+        <p>Rénovation intérieure, façades et finitions haut de gamme</p>
+
+        <div class="hero-buttons">
+            <a href="#contact" class="btn primary">Devis gratuit</a>
+            <a href="#realisations" class="btn secondary">Voir nos réalisations</a>
+        </div>
     </div>
 </section>
 
-<!-- SERVICES ACCORDÉONS -->
-<section id="services" class="section reveal">
-    <h2 class="section-title">Nos services</h2>
+<!-- SERVICES -->
+<section id="services" class="section">
+    <div class="container">
+        <h2 class="reveal">Nos services</h2>
 
-    <div class="accordion">
+        <div class="accordions">
+            <div class="accordion reveal">
+                <button class="accordion-header">Peinture intérieure</button>
+                <div class="accordion-content">
+                    <p>Murs, plafonds, finitions premium.</p>
+                </div>
+            </div>
 
-        <div class="accordion-item">
-            <button class="accordion-header">
-                Peinture intérieure
-                <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="accordion-content">
-                <p>Murs, plafonds, boiseries, finitions durables et soignées.</p>
+            <div class="accordion reveal">
+                <button class="accordion-header">Façades</button>
+                <div class="accordion-content">
+                    <p>Ravalement et protection durable.</p>
+                </div>
+            </div>
+
+            <div class="accordion reveal">
+                <button class="accordion-header">Décoration</button>
+                <div class="accordion-content">
+                    <p>Enduits décoratifs, effets matière.</p>
+                </div>
             </div>
         </div>
-
-        <div class="accordion-item">
-            <button class="accordion-header">
-                Ravalement de façade
-                <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="accordion-content">
-                <p>Nettoyage, réparation, protection et mise en peinture extérieure.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <button class="accordion-header">
-                Dégâts des eaux
-                <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="accordion-content">
-                <p>Remise en état après sinistre, devis assurance.</p>
-            </div>
-        </div>
-
     </div>
 </section>
 
-<!-- CTA -->
-<section id="contact" class="cta reveal">
-    <h2>Besoin d’un devis gratuit ?</h2>
-    <a href="tel:+33600000000" class="btn btn-primary">Appeler maintenant</a>
+<!-- CTA FOOTER -->
+<section class="cta-footer">
+    <div class="container reveal">
+        <h2>Un projet ? Parlons-en.</h2>
+        <a href="#contact" class="btn primary large">Demander un devis gratuit</a>
+    </div>
 </section>
+
+<footer class="footer">
+    <p>© 2026 PeinturePro</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
