@@ -1,34 +1,24 @@
-/* MENU MOBILE */
+/* MENU BURGER */
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
 
-if (burger && nav) {
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('nav-active');
-        burger.setAttribute(
-            'aria-expanded',
-            nav.classList.contains('nav-active')
-        );
-    });
-}
-
-/* NAVBAR SCROLL EFFECT */
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
 });
 
-/* FORMULAIRE */
-const form = document.getElementById('contactForm');
-if (form) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert("Merci ! Votre demande a bien été envoyée. Nous vous recontactons sous 48h.");
-        form.reset();
+/* ANIMATIONS AU SCROLL */
+const reveals = document.querySelectorAll('.reveal');
+
+function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+            el.classList.add('active');
+        }
     });
 }
+
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
