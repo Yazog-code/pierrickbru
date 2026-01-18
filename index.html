@@ -20,18 +20,25 @@
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">Peinture<span>Pro</span></div>
-        <nav>
+
+        <nav class="nav-links">
             <a href="#services">Services</a>
             <a href="#realisations">Réalisations</a>
             <a href="#contact" class="btn-nav">Devis gratuit</a>
         </nav>
+
+        <!-- BURGER -->
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
     <!-- HERO -->
-    <section class="hero" id="accueil">
+    <section class="hero reveal">
         <div class="hero-content">
 
-            <!-- LOGO HERO -->
             <img src="logo-peinturepro.svg" alt="Logo PeinturePro" class="hero-logo">
 
             <h1>Artisan Peintre Professionnel à Paris</h1>
@@ -51,16 +58,26 @@
     </section>
 
     <!-- RÉALISATIONS -->
-    <section id="realisations">
+    <section id="realisations" class="reveal">
         <h2 class="section-title">Nos réalisations</h2>
 
         <div class="realisations-grid">
-            <div class="realisation"><img src="real1.jpg" alt=""></div>
-            <div class="realisation"><img src="real2.jpg" alt=""></div>
-            <div class="realisation"><img src="real3.jpg" alt=""></div>
-            <div class="realisation"><img src="real4.jpg" alt=""></div>
+            <div class="realisation"><img src="real1.jpg"></div>
+            <div class="realisation"><img src="real2.jpg"></div>
+            <div class="realisation"><img src="real3.jpg"></div>
+            <div class="realisation"><img src="real4.jpg"></div>
         </div>
     </section>
+
+    <!-- CTA BAS DE PAGE -->
+    <section class="cta reveal">
+        <h2>Besoin d’un devis gratuit ?</h2>
+        <p>Décrivez votre projet, réponse sous 48h.</p>
+        <a href="#contact" class="btn btn-primary">Demander un devis</a>
+    </section>
+
+    <!-- JS -->
+    <script src="script.js"></script>
 
 </body>
 </html>
