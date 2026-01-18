@@ -1,6 +1,4 @@
-/* =====================
-   RESET & BASE
-===================== */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -10,32 +8,15 @@
 body {
     font-family: 'Inter', sans-serif;
     color: #1f2933;
-    line-height: 1.6;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-/* =====================
-   VARIABLES
-===================== */
+/* VARIABLES */
 :root {
     --primary: #f28c28;
-    --dark: #1f2933;
     --blue: #243746;
-    --light: #f9fafb;
 }
 
-/* =====================
-   NAVBAR
-===================== */
+/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
@@ -45,7 +26,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 0 30px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     z-index: 1000;
 }
@@ -59,14 +40,9 @@ img {
     color: var(--primary);
 }
 
-nav {
+.nav-links {
     display: flex;
-    align-items: center;
     gap: 30px;
-}
-
-nav a {
-    font-weight: 500;
 }
 
 .btn-nav {
@@ -77,14 +53,26 @@ nav a {
     font-weight: 600;
 }
 
-/* =====================
-   HERO
-===================== */
+/* BURGER */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: #1f2933;
+    border-radius: 3px;
+}
+
+/* HERO */
 .hero {
     min-height: 100vh;
-    background: 
-        linear-gradient(rgba(36,55,70,0.65), rgba(36,55,70,0.65)),
-        url("hero.jpg") center/cover no-repeat;
+    background: linear-gradient(rgba(36,55,70,0.65), rgba(36,55,70,0.65)),
+    url("hero.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,50 +81,23 @@ nav a {
     color: #fff;
 }
 
-.hero-content {
-    max-width: 900px;
-}
-
-/* LOGO HERO */
 .hero-logo {
     width: 120px;
-    margin: 0 auto 25px;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
-}
-
-.hero h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    opacity: 0.95;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 
 .hero-buttons {
     display: flex;
-    justify-content: center;
     gap: 20px;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
-/* =====================
-   BUTTONS
-===================== */
 .btn {
     padding: 14px 26px;
     border-radius: 10px;
     font-weight: 600;
-    font-size: 16px;
-    transition: transform 0.2s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
 }
 
 .btn-primary {
@@ -149,37 +110,7 @@ nav a {
     color: #fff;
 }
 
-/* =====================
-   BADGES
-===================== */
-.badges {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    font-size: 14px;
-}
-
-.badges i {
-    color: #4ade80;
-    margin-right: 6px;
-}
-
-/* =====================
-   SECTIONS
-===================== */
-section {
-    padding: 80px 20px;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
-}
-
-/* =====================
-   RÉALISATIONS
-===================== */
+/* RÉALISATIONS */
 .realisations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -189,7 +120,7 @@ section {
 }
 
 .realisation {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
     overflow: hidden;
     border-radius: 12px;
 }
@@ -200,39 +131,60 @@ section {
     object-fit: cover;
 }
 
-/* =====================
-   RESPONSIVE
-===================== */
+/* CTA */
+.cta {
+    background: var(--blue);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* ANIMATIONS SCROLL */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
 
-    .navbar {
-        padding: 0 20px;
-    }
-
-    nav a:not(.btn-nav) {
+    .nav-links {
+        position: absolute;
+        top: 72px;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
         display: none;
     }
 
-    .hero h1 {
-        font-size: 32px;
+    .nav-links.active {
+        display: flex;
     }
 
-    .hero p {
-        font-size: 16px;
+    .burger {
+        display: flex;
     }
 
     .hero-logo {
         width: 90px;
-    }
-
-    .badges {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-@media (max-width: 380px) {
-    .hero-logo {
-        width: 75px;
     }
 }
