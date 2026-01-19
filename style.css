@@ -19,7 +19,8 @@ body {
     font-family: var(--font-main);
     color: var(--text-dark);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Empêche le scroll horizontal */
+    width: 100%;
 }
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
@@ -88,7 +89,6 @@ header {
     align-items: center;
 }
 
-/* Styles pour le logo Image Header */
 .header-logo-img {
     max-height: 50px;
     width: auto;
@@ -102,11 +102,13 @@ header {
 .burger { display: none; cursor: pointer; }
 .burger div { width: 25px; height: 3px; background-color: var(--text-dark); margin: 5px; transition: 0.3s; }
 
-/* --- Hero Section --- */
+/* --- Hero Section (FULL WIDTH) --- */
 .hero {
     position: relative;
     height: 100vh;
     min-height: 700px;
+    width: 100%;
+    /* Image de fond en pleine largeur */
     background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -128,12 +130,7 @@ header {
     position: relative;
 }
 
-.hero-text-box h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
+.hero-text-box h1 { font-size: 2rem; margin-bottom: 20px; font-weight: 700; }
 .hero-text-box p { font-size: 0.95rem; margin-bottom: 15px; font-weight: 300; }
 .hero-text-box strong { font-weight: 700; color: #aaddff; }
 
@@ -166,6 +163,7 @@ header {
     background: #fff;
     position: relative;
     text-align: center;
+    width: 100%;
 }
 
 .circle-grid {
@@ -175,10 +173,7 @@ header {
     flex-wrap: wrap;
 }
 
-.circle-item {
-    width: 300px;
-    text-align: center;
-}
+.circle-item { width: 300px; text-align: center; }
 
 .circle-img {
     width: 250px;
@@ -208,31 +203,26 @@ header {
 }
 .wave-bottom svg { width: 100%; height: 100px; }
 
-/* --- Dark Offer Section (CORRIGÉ & ROBUSTE) --- */
+/* --- Dark Offer Section (FULL WIDTH CORRIGÉ) --- */
 .dark-offer {
-    /* Fond de secours */
     background-color: #111;
-
-    /* Double fond : dégradé solide gauche + image droite */
-    background-image: linear-gradient(to right, #111 0%, #111 50%, transparent 50%),
+    /* Image à droite, fondu noir à gauche */
+    background-image: linear-gradient(to right, #111 0%, #111 40%, transparent 80%),
                       url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     color: #fff;
     padding: 100px 0;
     position: relative;
+    width: 100%;
 }
 
-.offer-grid {
-    display: flex;
-    align-items: center;
-}
+.offer-grid { display: flex; align-items: center; }
 
 .offer-text {
-    width: 50%; /* Reste sur la partie gauche (noire) */
+    width: 50%;
     padding-right: 50px;
     padding: 40px;
     z-index: 2;
@@ -242,12 +232,13 @@ header {
 .offer-text p { margin-bottom: 20px; font-size: 0.95rem; color: #ccc; }
 .offer-text strong { color: #fff; }
 
-/* --- Light Service Section --- */
+/* --- Light Service Section (MODIFIÉ : FULL WIDTH) --- */
 .light-service {
     background: #f9f9f9;
     padding: 100px 0 150px;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .service-grid {
@@ -257,16 +248,16 @@ header {
     z-index: 2;
 }
 
-/* Image background faded à gauche */
+/* MODIFICATION ICI : Largeur passée à 100% */
 .light-service::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 100%; /* AVANT: 60%, MAINTENANT: 100% pour couvrir tout le fond */
     height: 100%;
     background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
-    opacity: 0.2;
+    opacity: 0.15; /* Opacité légèrement réduite pour que le texte reste lisible */
     z-index: 1;
 }
 
@@ -290,9 +281,7 @@ header {
 }
 
 /* --- Footer --- */
-footer {
-    color: #fff;
-}
+footer { color: #fff; width: 100%; }
 
 .footer-top {
     background-color: var(--primary-dark);
@@ -319,15 +308,8 @@ footer {
 }
 
 .footer-col { flex: 1; min-width: 250px; margin-bottom: 30px; }
+.footer-col h4 { font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
 
-.footer-col h4 {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Styles pour le logo Image Footer */
 .footer-logo-img {
     max-height: 70px;
     width: auto;
@@ -361,14 +343,11 @@ footer {
 }
 
 /* --- RESPONSIVE --- */
-
 @media screen and (max-width: 1024px) {
     .nav-links { display: none; }
     .burger { display: block; }
-    
     .hero-content { width: 80%; }
     
-    /* Correction Dark Section Mobile */
     .dark-offer {
         background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
                           url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
@@ -377,19 +356,13 @@ footer {
     .offer-text { width: 100%; padding: 30px; background: rgba(0,0,0,0.5); }
     
     .service-grid { flex-direction: column; }
-    .service-text { width: 100%; padding: 30px; background: rgba(255,255,255,0.9); }
-    .light-service::before { width: 100%; height: 300px; position: relative; display: block; }
+    /* Sur mobile, on remet le fond blanc opaque pour la lisibilité */
+    .service-text { width: 100%; padding: 30px; background: rgba(255,255,255,0.85); }
+    .light-service::before { width: 100%; height: 100%; }
     
     .nav-active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        right: 0;
-        top: 70px;
-        background: #fff;
-        width: 100%;
-        padding: 20px;
-        text-align: center;
+        display: flex; flex-direction: column; position: absolute; right: 0; top: 70px;
+        background: #fff; width: 100%; padding: 20px; text-align: center;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 }
@@ -398,7 +371,6 @@ footer {
     .hero-content { width: 100%; padding: 0 20px; }
     .hero-text-box { padding: 20px; }
     .circle-item { width: 100%; }
-    
     .footer-grid { flex-direction: column; }
     .footer-col { margin-bottom: 40px; }
 }
