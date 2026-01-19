@@ -1,28 +1,40 @@
-// MENU MOBILE
-const burger = document.getElementById('burger');
-const navMobile = document.getElementById('navMobile');
+document.addEventListener('DOMContentLoaded', () => {
+    // Menu Burger
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
 
-burger.addEventListener('click', () => {
-    navMobile.style.right =
-        navMobile.style.right === '0px' ? '-100%' : '0';
-});
+    burger.addEventListener('click', () => {
+        // Toggle Nav
+        nav.classList.toggle('nav-active');
 
-// ACCORDIONS
-document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-        const open = content.style.maxHeight;
+        // Animation Burger
+        burger.classList.toggle('toggle');
+    });
 
-        document.querySelectorAll('.accordion-content')
-            .forEach(c => c.style.maxHeight = null);
-
-        if (!open) {
-            content.style.maxHeight = content.scrollHeight + 'px';
-        }
+    // Fermer le menu au clic sur un lien
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+        });
     });
 });
 
-// SCROLL ANIMATIONS
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isInte
+// Scroll to Top Function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Changement de style header au scroll (Optionnel)
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+    } else {
+        header.style.boxShadow = "none";
+    }
+});
