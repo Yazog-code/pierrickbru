@@ -2,95 +2,151 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>PeinturePro – Artisan peintre</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>ORS FRERES - Peintres en bâtiment au Haillan</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="container header-inner">
-        <div class="logo">Peinture<span>Pro</span></div>
-
-        <nav class="nav-desktop">
-            <a href="#services">Services</a>
-            <a href="#realisations">Réalisations</a>
-            <a href="#contact" class="btn small">Devis</a>
-        </nav>
-
-        <button class="burger" id="burger">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
-</header>
-
-<!-- MENU MOBILE -->
-<nav class="nav-mobile" id="navMobile">
-    <a href="#services">Services</a>
-    <a href="#realisations">Réalisations</a>
-    <a href="#contact" class="btn">Demander un devis</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-content reveal">
-        <img src="logo-peinturepro.svg" alt="PeinturePro" class="hero-logo"
-             onerror="this.style.display='none'">
-
-        <h1>Artisan peintre à Paris</h1>
-        <p>Rénovation intérieure, façades et finitions haut de gamme</p>
-
-        <div class="hero-buttons">
-            <a href="#contact" class="btn primary">Devis gratuit</a>
-            <a href="#realisations" class="btn secondary">Voir nos réalisations</a>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <h2>ORS<span>FRERES</span></h2>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#accueil" class="active">Accueil</a></li>
+                    <li><a href="#interieur">Décoration intérieure</a></li>
+                    <li><a href="#exterieur">Rénovation extérieure</a></li>
+                    <li><a href="#chateaux">Châteaux & Propriétés Viticoles</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="tel:0664387096" class="btn-phone">06 64 38 70 96</a>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </div>
-    </div>
-</section>
+    </header>
 
-<!-- SERVICES -->
-<section id="services" class="section">
-    <div class="container">
-        <h2 class="reveal">Nos services</h2>
-
-        <div class="accordions">
-            <div class="accordion reveal">
-                <button class="accordion-header">Peinture intérieure</button>
-                <div class="accordion-content">
-                    <p>Murs, plafonds, finitions premium.</p>
-                </div>
-            </div>
-
-            <div class="accordion reveal">
-                <button class="accordion-header">Façades</button>
-                <div class="accordion-content">
-                    <p>Ravalement et protection durable.</p>
-                </div>
-            </div>
-
-            <div class="accordion reveal">
-                <button class="accordion-header">Décoration</button>
-                <div class="accordion-content">
-                    <p>Enduits décoratifs, effets matière.</p>
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <div class="hero-text-box">
+                <h1>Nos peintres en bâtiment sont à votre service au Haillan</h1>
+                <p>Depuis 4 générations, nous mettons notre passion au service de nos clients grâce à notre entreprise artisanale et familiale située au Haillan, à proximité de Bordeaux. Spécialisés en peinture et dotés d'un savoir-faire unique, nous nous déplaçons dans tout le <strong>Bassin d'Arcachon</strong>, au <strong>Cap-Ferret</strong> ou encore à <strong>Andernos-les-Bains</strong>.</p>
+                <p>Nos peintres en bâtiment réalisent différents travaux de peinture, des ravalements de façade ainsi que des travaux de décoration intérieure (pose de vinyle au sol, peinture effet bois, papier peint...).</p>
+                <p class="small-text">Nos nombreuses années de pratique nous permettent de vous offrir des services d'une <strong>grande qualité</strong>. Nous effectuons tous vos travaux de peinture intérieure ou extérieure (ainsi que les boiseries) dans les communes de Saint-Aubin-de-Médoc, Eysines, Pessac et aux alentours.</p>
+                <div class="arrow-down">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+        <div class="wave-top">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+    </section>
 
-<!-- CTA FOOTER -->
-<section class="cta-footer">
-    <div class="container reveal">
-        <h2>Un projet ? Parlons-en.</h2>
-        <a href="#contact" class="btn primary large">Demander un devis gratuit</a>
-    </div>
-</section>
+    <section class="services-circles">
+        <div class="container">
+            <div class="circle-grid">
+                <div class="circle-item">
+                    <div class="circle-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                    <h3>DÉCORATION INTÉRIEURE</h3>
+                </div>
+                <div class="circle-item">
+                    <div class="circle-img" style="background-image: url('https://images.unsplash.com/photo-1595846519845-68e298c2edd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                    <h3>RÉNOVATION EXTÉRIEURE</h3>
+                </div>
+                <div class="circle-item">
+                    <div class="circle-img" style="background-image: url('https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                    <h3>CHÂTEAUX & PROPRIÉTÉS VITICOLES</h3>
+                </div>
+            </div>
+        </div>
+        <div class="wave-bottom">
+             <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,100 C480,0 960,0 1440,100 L1440,100 L0,100 Z" fill="#1a1a1a"></path>
+            </svg>
+        </div>
+    </section>
 
-<footer class="footer">
-    <p>© 2026 PeinturePro</p>
-</footer>
+    <section class="dark-offer" id="interieur">
+        <div class="container offer-grid">
+            <div class="offer-text">
+                <h2>Une offre variée pour votre maison ou château viticole</h2>
+                <p>Notre équipe, composée de peintres en bâtiment, intervient pour vos travaux de peinture. Nous vous garantissons un <strong>travail soigné</strong> avec un design élégant grâce à notre large palette technique : peinture pour façades, peinture à la chaux, peinture effet bois, revêtement muraux, dont la pose de papier peint décoratif haut de gamme (via le fournisseur Farrow&Ball).</p>
+                <p>En plus de nos services de peinture et d'habillage mural, nous vous proposons également l'application de lasur ou vernis sur bois brut, la pose de revêtement de sols (pose de vinyle, de parquet...), l'isolation thermique, le ravalement de façade...</p>
+                <p>De plus, notre entreprise propose un service très particulier à destination des propriétaires de château viticole. Nous sommes à votre disposition pour rénover votre château et réaliser des travaux de peinture (label Excel) pour la partie chais, permettant de lutter contre l'humidité et la moisissure.</p>
+                <a href="#contact" class="btn-white">Nos travaux de peinture</a>
+            </div>
+            <div class="offer-img">
+                </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <section class="light-service" id="exterieur">
+        <div class="container service-grid">
+            <div class="service-img-container">
+                 </div>
+            <div class="service-text">
+                <h2>Un service réactif et flexible</h2>
+                <p>Nos clients apprécient tout particulièrement notre réactivité et flexibilité grâce au déplacement d'intervenant sur place afin d'évaluer le cours du projet. Nous voulons vous assurer un service de qualité, soigneusement réalisé et contrôlé pour vous offrir la meilleure expérience possible.</p>
+                <p>C'est pourquoi nous avons fait le choix de travailler uniquement avec des personnes fiables, formées et expérimentées. Nos employés sont tous internes à l'entreprise et sont recrutés du fait des valeurs que nous partageons avec eux tels que le <strong>professionnalisme</strong>, la ponctualité, la qualité du travail ainsi qu'un désir primordial de réaliser un travail qui vous satisfera.</p>
+                <p>Afin de conserver la qualité de nos services, c'est pourquoi nous ne sous-traitons aucune offre proposée.</p>
+                <p>Parmi ceux qui nous font confiance, on retrouve de nombreux particuliers, hôtels de luxe, professionnels du milieu hospitalier, multiples châteaux pour leur domaine viticole et bien d'autres.</p>
+                <a href="#contact" class="btn-dark">Le ravalement de façade</a>
+            </div>
+        </div>
+        <div class="wave-footer">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,120 L0,40 C300,100 800,0 1440,80 L1440,120 Z" fill="#002b3d"></path>
+            </svg>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-top">
+            <i class="fas fa-phone-alt phone-icon"></i>
+            <h3>Appelez-nous et réservez vos prochains travaux de peinture et rénovation.</h3>
+            <a href="mailto:ors-freres@wanadoo.fr" class="btn-white-rounded">Nous contacter</a>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-grid">
+                <div class="footer-col contact-info">
+                    <h4>CONTACT</h4>
+                    <p><i class="far fa-envelope"></i> ors-freres@wanadoo.fr</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 78 avenue de Magudas<br>bâtiment D lotissement 503,<br>33185 Le Haillan</p>
+                </div>
+                
+                <div class="footer-col logo-col">
+                    <div class="footer-logo">
+                        <h2>ORS<br><span>FRERES</span></h2>
+                    </div>
+                    <h4>HEURES D'OUVERTURE</h4>
+                    <p><i class="far fa-clock"></i> Du Lundi au Vendredi: 8h à 17h</p>
+                </div>
+                
+                <div class="footer-col call-info">
+                    <h4>APPELEZ NOUS</h4>
+                    <p class="big-phone"><i class="fas fa-phone-alt"></i> 06 64 38 70 96</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 ORS FRERES - Mentions légales - Protection de la vie privée - Cookies - Réalisé par Solocal</p>
+            </div>
+            <div class="scroll-top" onclick="scrollToTop()">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
