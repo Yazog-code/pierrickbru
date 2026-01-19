@@ -6,7 +6,7 @@
     --text-light: #f4f4f4;
     --overlay-dark: rgba(0, 0, 0, 0.7);
     --font-main: 'Roboto', sans-serif;
-    --font-title: 'Playfair Display', serif; /* Pour un look plus "château" */
+    --font-title: 'Playfair Display', serif;
 }
 
 * {
@@ -88,17 +88,16 @@ header {
     align-items: center;
 }
 
-.logo h2 {
-    font-family: 'Arial Black', sans-serif; /* Style "chunky" pour le logo */
-    font-weight: 900;
-    color: var(--primary-dark);
-    line-height: 0.8;
+/* Styles pour le logo Image Header */
+.header-logo-img {
+    max-height: 50px;
+    width: auto;
+    display: block;
 }
-.logo span { color: var(--primary-dark); display: block; letter-spacing: 2px; }
 
 .nav-links { display: flex; gap: 20px; }
 .nav-links a { font-size: 0.9rem; color: #666; font-weight: 500; }
-.nav-links a:hover, .nav-links a.active { color: #a52a2a; } /* Couleur rouge brique du hover */
+.nav-links a:hover, .nav-links a.active { color: #a52a2a; }
 
 .burger { display: none; cursor: pointer; }
 .burger div { width: 25px; height: 3px; background-color: var(--text-dark); margin: 5px; transition: 0.3s; }
@@ -111,7 +110,7 @@ header {
     background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Align box to right */
+    justify-content: flex-end;
     padding-top: 80px;
 }
 
@@ -123,7 +122,7 @@ header {
 }
 
 .hero-text-box {
-    background: rgba(60, 60, 60, 0.85); /* Fond gris foncé semi-transparent */
+    background: rgba(60, 60, 60, 0.85);
     color: #fff;
     padding: 40px;
     position: relative;
@@ -136,7 +135,7 @@ header {
 }
 
 .hero-text-box p { font-size: 0.95rem; margin-bottom: 15px; font-weight: 300; }
-.hero-text-box strong { font-weight: 700; color: #aaddff; } /* Highlight color */
+.hero-text-box strong { font-weight: 700; color: #aaddff; }
 
 .arrow-down {
     text-align: center;
@@ -151,7 +150,6 @@ header {
     60% {transform: translateY(-5px);}
 }
 
-/* Vague SVG Haut */
 .wave-top {
     position: absolute;
     bottom: -1px;
@@ -164,7 +162,7 @@ header {
 
 /* --- Services Circles --- */
 .services-circles {
-    padding: 80px 0 150px; /* Extra padding bottom for wave overlap */
+    padding: 80px 0 150px;
     background: #fff;
     position: relative;
     text-align: center;
@@ -190,7 +188,7 @@ header {
     background-position: center;
     margin: 0 auto 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    border: 5px solid #fff; /* Optional border */
+    border: 5px solid #fff;
 }
 
 .circle-item h3 {
@@ -210,14 +208,22 @@ header {
 }
 .wave-bottom svg { width: 100%; height: 100px; }
 
-/* --- Dark Offer Section --- */
+/* --- Dark Offer Section (CORRIGÉ & ROBUSTE) --- */
 .dark-offer {
-    background: #1a1a1a; /* Backup color */
-    background: linear-gradient(to right, #111 40%, transparent 40%), url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    /* Fond de secours */
+    background-color: #111;
+
+    /* Double fond : dégradé solide gauche + image droite */
+    background-image: linear-gradient(to right, #111 0%, #111 50%, transparent 50%),
+                      url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+
     color: #fff;
     padding: 100px 0;
+    position: relative;
 }
 
 .offer-grid {
@@ -226,13 +232,11 @@ header {
 }
 
 .offer-text {
-    width: 50%;
+    width: 50%; /* Reste sur la partie gauche (noire) */
     padding-right: 50px;
-    background: rgba(0,0,0,0.6); /* For mobile readability mostly */
     padding: 40px;
+    z-index: 2;
 }
-
-/* Mobile responsive tweak for gradient background handled in media queries */
 
 .offer-text h2 { font-size: 2rem; margin-bottom: 25px; }
 .offer-text p { margin-bottom: 20px; font-size: 0.95rem; color: #ccc; }
@@ -241,19 +245,19 @@ header {
 /* --- Light Service Section --- */
 .light-service {
     background: #f9f9f9;
-    padding: 100px 0 150px; /* Padding for bottom wave */
+    padding: 100px 0 150px;
     position: relative;
     overflow: hidden;
 }
 
 .service-grid {
     display: flex;
-    justify-content: flex-end; /* Text on right */
+    justify-content: flex-end;
     position: relative;
     z-index: 2;
 }
 
-/* Background image trick for the left side faded look */
+/* Image background faded à gauche */
 .light-service::before {
     content: '';
     position: absolute;
@@ -262,7 +266,7 @@ header {
     width: 60%;
     height: 100%;
     background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
-    opacity: 0.2; /* Faded effect */
+    opacity: 0.2;
     z-index: 1;
 }
 
@@ -292,7 +296,7 @@ footer {
 
 .footer-top {
     background-color: var(--primary-dark);
-    padding: 80px 20px 60px; /* Top padding accomodates the wave */
+    padding: 80px 20px 60px;
     text-align: center;
 }
 
@@ -301,7 +305,7 @@ footer {
 
 .footer-bottom {
     background-color: var(--primary-gold);
-    color: var(--text-dark); /* Dark text on yellow */
+    color: var(--text-dark);
     padding: 60px 0 20px;
     position: relative;
 }
@@ -323,8 +327,13 @@ footer {
     letter-spacing: 1px;
 }
 
-.logo-col h2 { font-family: 'Arial Black', sans-serif; font-size: 2rem; line-height: 0.8; color: var(--primary-dark); }
-.logo-col span { color: #fff; /* White part of logo on yellow bg */ }
+/* Styles pour le logo Image Footer */
+.footer-logo-img {
+    max-height: 70px;
+    width: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+}
 
 .big-phone { font-size: 1.5rem; font-weight: bold; }
 
@@ -354,20 +363,23 @@ footer {
 /* --- RESPONSIVE --- */
 
 @media screen and (max-width: 1024px) {
-    .nav-links { display: none; } /* Pour simplifier, on cache menu tablette/mobile */
+    .nav-links { display: none; }
     .burger { display: block; }
     
     .hero-content { width: 80%; }
     
-    .dark-offer { background: url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover; }
+    /* Correction Dark Section Mobile */
+    .dark-offer {
+        background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                          url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    }
     .offer-grid { flex-direction: column; }
-    .offer-text { width: 100%; padding: 30px; background: rgba(0,0,0,0.8); }
+    .offer-text { width: 100%; padding: 30px; background: rgba(0,0,0,0.5); }
     
     .service-grid { flex-direction: column; }
     .service-text { width: 100%; padding: 30px; background: rgba(255,255,255,0.9); }
     .light-service::before { width: 100%; height: 300px; position: relative; display: block; }
     
-    /* Nav Mobile Active State (JS required) */
     .nav-active {
         display: flex;
         flex-direction: column;
