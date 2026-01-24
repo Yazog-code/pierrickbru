@@ -148,8 +148,8 @@ header {
     padding: 80px 0 150px; 
     background: #ffffff; 
     color: var(--text-dark); 
-    /* Important : Force cette section à être au-dessus du fond qui dépasse */
     position: relative;
+    /* Z-index ajouté pour s'assurer que le fond blanc passe au-dessus */
     z-index: 5;
     text-align: center; width: 100%; scroll-margin-top: 100px;
 }
@@ -317,7 +317,6 @@ footer { color: var(--text-light); width: 100%; }
 
 /* --- TABLETTES & ÉCRANS MOYENS (Max 1024px) --- */
 @media screen and (max-width: 1024px) {
-    /* Menu */
     .nav-links {
         position: absolute; right: 0; top: 80px;
         background-color: #ffffff;
@@ -350,7 +349,7 @@ footer { color: var(--text-light); width: 100%; }
     .service-text { padding: 20px; }
     .offer-image-box { width: 80%; max-width: 500px; height: auto; aspect-ratio: 1/1; margin: 0 auto; }
 
-    /* Cercles réduits sur tablette aussi pour éviter l'effet "énorme" */
+    /* Cercles réduits sur tablette aussi */
     .circle-img { width: 180px; height: 180px; border-width: 3px; }
 }
 
@@ -359,32 +358,29 @@ footer { color: var(--text-light); width: 100%; }
     html { font-size: 95%; }
     .container { padding: 0 15px; }
     
-    /* Correction du "Bloc Gris" sous le Hero */
-    .hero { 
-        min-height: 600px; 
-        align-items: center; 
-        justify-content: center; 
-        padding-top: 80px; 
-        padding-bottom: 50px; /* Laisse place à la vague */
+    /* Header (Bouton centré) */
+    .nav-container { position: relative; justify-content: space-between; height: 60px; }
+    .header-logo-img { max-height: 40px; margin-top: 5px; }
+    .btn-phone {
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.9rem; padding: 8px 15px; white-space: nowrap; margin: 0; z-index: 10;
     }
+    .burger { margin-top: 5px; }
+    
+    /* Hero */
+    .hero { min-height: 600px; align-items: center; justify-content: center; padding-top: 80px; padding-bottom: 50px; }
     .hero-content { width: 100%; padding: 0 10px; }
     .hero-text-box h1 { font-size: 1.6rem; }
+    .hero-text-box { margin-bottom: 20px; padding-bottom: 30px; background: rgba(60, 60, 60, 0.9); border-radius: 8px; }
     
-    /* On force la box à ne pas déborder */
-    .hero-text-box { 
-        margin-bottom: 20px; 
-        padding-bottom: 30px; 
-        background: rgba(60, 60, 60, 0.9); 
-        border-radius: 8px; 
-    }
-    
-    /* Cercles réduits */
-    .services-circles { padding: 40px 0 80px; }
+    /* Cercles réduits et espace agrandi en bas pour la vague */
+    /* MODIFICATION ICI : 180px en bas pour repousser la vague */
+    .services-circles { padding: 40px 0 180px; }
     .circle-grid { flex-direction: column; align-items: center; gap: 30px; }
     .circle-item { width: 100%; }
-    /* La taille 180px est déjà héritée du block tablette ci-dessus */
+    .circle-img { width: 180px; height: 180px; border-width: 3px; }
     
-    /* Footer */
     .footer-top { padding: 40px 20px; }
     .footer-top h3 { font-size: 1.3rem; }
     .footer-grid { flex-direction: column; text-align: center; }
