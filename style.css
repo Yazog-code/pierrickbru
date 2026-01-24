@@ -103,6 +103,11 @@ header {
 .burger { display: none; cursor: pointer; }
 .burger div { width: 25px; height: 3px; background-color: var(--text-dark); margin: 5px; transition: 0.3s; }
 
+/* === ANIMATION BURGER EN CROIX === */
+.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+.toggle .line2 { opacity: 0; }
+.toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+
 /* --- Hero Section --- */
 .hero {
     position: relative;
@@ -337,16 +342,36 @@ footer { color: var(--text-light); width: 100%; }
 @media screen and (max-width: 768px) {
     html { font-size: 95%; }
     .container { padding: 0 15px; }
-    .btn-phone { font-size: 0.9rem; padding: 8px 15px; }
-    .header-logo-img { max-height: 40px; }
     
-    .hero { min-height: 600px; align-items: center; justify-content: center; padding-top: 60px; }
+    /* Header ajusté pour le centrage du bouton */
+    .nav-container {
+        position: relative;
+        justify-content: space-between;
+        height: 60px;
+    }
+
+    .header-logo-img { max-height: 40px; margin-top: 5px; }
+
+    /* Bouton téléphone centré en absolu */
+    .btn-phone {
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.9rem; padding: 8px 15px; white-space: nowrap; margin: 0; z-index: 10;
+    }
+
+    .burger { margin-top: 5px; }
+    
+    /* Hero ajusté pour éviter le bloc gris */
+    .hero { min-height: 600px; align-items: center; justify-content: center; padding-top: 80px; padding-bottom: 50px; }
     .hero-content { width: 100%; padding: 0 10px; }
     .hero-text-box h1 { font-size: 1.6rem; }
+    .hero-text-box { margin-bottom: 20px; padding-bottom: 30px; background: rgba(60, 60, 60, 0.9); border-radius: 8px; }
     
-    .services-circles { padding: 50px 0 100px; }
-    .circle-grid { flex-direction: column; align-items: center; gap: 40px; }
+    /* Cercles réduits */
+    .services-circles { padding: 40px 0 80px; }
+    .circle-grid { flex-direction: column; align-items: center; gap: 30px; }
     .circle-item { width: 100%; }
+    .circle-img { width: 180px; height: 180px; border-width: 3px; }
     
     .footer-top { padding: 40px 20px; }
     .footer-top h3 { font-size: 1.3rem; }
