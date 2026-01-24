@@ -5,12 +5,12 @@
     --logo-red: rgb(100, 44, 62);      /* Rouge du logo */
     --primary-accent: #00a8e8;         /* Cyan vif (splash) */
     
-    /* Couleur de fond claire, légèrement assombrie pour le contraste */
-    --bg-light-tint: #dbe2e8; 
+    /* Couleur de fond claire, assombrie de 5% supp. (#c2c9d0) */
+    --bg-light-tint: #c2c9d0; 
     
-    /* Texte clair, un peu plus foncé que le blanc pur pour être moins éblouissant */
+    /* Couleurs de texte */
     --text-dark: #333;
-    --text-light: #eaeaea; /* Blanc cassé pour le texte sur fond sombre */
+    --text-light: #eaeaea; 
     --font-main: 'Roboto', sans-serif;
     --font-title: 'Playfair Display', serif;
 }
@@ -24,7 +24,7 @@ html {
 
 body {
     font-family: var(--font-main);
-    color: var(--text-light); /* Utilisation du blanc cassé pour le texte général */
+    color: var(--text-light); /* Texte clair par défaut sur le fond dégradé */
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
@@ -48,7 +48,7 @@ ul { list-style: none; }
     border-radius: 30px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    font-size: 1.1rem; /* +10% */
+    font-size: 1.1rem; 
 }
 
 .btn-white {
@@ -74,7 +74,7 @@ ul { list-style: none; }
     margin-top: 20px;
 }
 .btn-white-rounded:hover {
-    background: var(--primary-accent); /* Survol Cyan */
+    background: var(--primary-accent); 
     color: #fff;
 }
 
@@ -88,7 +88,7 @@ ul { list-style: none; }
     margin-top: 20px;
 }
 .btn-dark:hover {
-    background: var(--logo-red); /* Survol Rouge Logo */
+    background: var(--logo-red); 
 }
 
 /* --- Header --- */
@@ -107,7 +107,7 @@ header {
 
 .nav-links { display: flex; gap: 20px; }
 .nav-links a { 
-    font-size: 1.1rem; /* +10% */
+    font-size: 1.1rem; 
     color: #666; 
     font-weight: 500; 
 }
@@ -131,7 +131,7 @@ header {
 .hero-content { width: 50%; padding-right: 5%; position: relative; z-index: 2; }
 .hero-text-box {
     background: rgba(60, 60, 60, 0.85);
-    color: var(--text-light); /* Texte clair pour la boîte sombre */
+    color: var(--text-light); 
     padding: 40px;
     position: relative;
 }
@@ -155,7 +155,7 @@ header {
 .services-circles {
     padding: 80px 0 150px; 
     background: var(--bg-light-tint); 
-    color: var(--text-dark); /* Texte sombre pour la section claire */
+    color: var(--text-dark);
     position: relative;
     text-align: center; width: 100%; scroll-margin-top: 100px;
 }
@@ -169,18 +169,16 @@ header {
 }
 .circle-item h3 { text-transform: uppercase; font-size: 1rem; color: #333; letter-spacing: 1px; }
 
-/* VAGUE DU BAS (Couleur bleue modifiée) */
+/* VAGUE DU BAS */
 .wave-bottom { 
     position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; z-index: 2; 
 }
-/* La vague utilise le bleu foncé (primary-dark) */
 .wave-bottom svg { width: 100%; height: 100px; fill: var(--primary-dark); }
 
-/* --- Dark Offer Section (COULEUR MODIFIÉE) --- */
+/* --- Dark Offer Section --- */
 .dark-offer {
-    /* Changement de fond vers le bleu rgb(35, 50, 62) */
     background-color: var(--primary-dark);
-    color: var(--text-light); /* Texte clair pour la section sombre */
+    color: var(--text-light);
     padding: 80px 0 120px;
     position: relative;
     width: 100%;
@@ -222,7 +220,7 @@ header {
 /* --- Light Service Section --- */
 .light-service {
     background: var(--bg-light-tint); 
-    color: var(--text-dark); /* Texte sombre pour la section claire */
+    color: var(--text-dark);
     padding: 100px 0 150px;
     position: relative; overflow: hidden; width: 100%;
 }
@@ -288,7 +286,6 @@ footer { color: var(--text-light); width: 100%; }
     .offer-image-box { width: 100%; max-width: 400px; height: auto; aspect-ratio: 1/1; }
     
     .service-grid { flex-direction: column; }
-    /* Adaptation du fond du texte sur mobile avec la teinte légère */
     .service-text { width: 100%; padding: 30px; background: rgba(240, 244, 248, 0.9); }
     .light-service::before { width: 100%; height: 100%; }
     
