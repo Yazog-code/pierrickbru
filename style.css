@@ -1,7 +1,13 @@
 /* --- Variables & Reset --- */
 :root {
-    --primary-dark: #002b3d; /* Bleu nuit */
-    --primary-accent: #00a8e8; /* Cyan du Logo */
+    /* --- COULEURS IDENTITÉ (RGB/Hex) --- */
+    --primary-dark: rgb(35, 50, 62);   /* Bleu foncé du logo */
+    --logo-red: rgb(100, 44, 62);      /* Rouge du logo */
+    --primary-accent: #00a8e8;         /* Cyan vif (splash) */
+    
+    /* Couleur de fond claire harmonisée */
+    --bg-light-tint: #f0f4f8; 
+    
     --text-dark: #333;
     --text-light: #f4f4f4;
     --font-main: 'Roboto', sans-serif;
@@ -10,7 +16,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 103%; /* Taille globale +3% */
+    font-size: 103%; /* Taille globale augmentée */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,6 +27,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
+    /* Fond général du site */
+    background-color: var(--bg-light-tint);
 }
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
@@ -38,6 +46,7 @@ ul { list-style: none; }
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     font-size: 1.1rem; /* +10% */
 }
+
 .btn-white {
     display: inline-block;
     background: #fff;
@@ -47,6 +56,10 @@ ul { list-style: none; }
     font-weight: bold;
     margin-top: 20px;
 }
+.btn-white:hover {
+    color: var(--primary-accent);
+}
+
 .btn-white-rounded {
     display: inline-block;
     background: #fff;
@@ -56,6 +69,11 @@ ul { list-style: none; }
     font-weight: bold;
     margin-top: 20px;
 }
+.btn-white-rounded:hover {
+    background: var(--primary-accent); /* Survol Cyan */
+    color: #fff;
+}
+
 .btn-dark {
     display: inline-block;
     background: var(--primary-dark);
@@ -65,10 +83,13 @@ ul { list-style: none; }
     font-weight: bold;
     margin-top: 20px;
 }
+.btn-dark:hover {
+    background: var(--logo-red); /* Survol Rouge Logo */
+}
 
 /* --- Header --- */
 header {
-    background: #fff;
+    background: var(--bg-light-tint);
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -123,11 +144,13 @@ header {
     60% {transform: translateY(-5px);}
 }
 .wave-top { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; z-index: 3; }
-.wave-top svg { width: 100%; height: 100px; }
+.wave-top svg { width: 100%; height: 100px; fill: var(--bg-light-tint); }
 
 /* --- Services Circles --- */
 .services-circles {
-    padding: 80px 0 150px; background: #fff; position: relative;
+    padding: 80px 0 150px; 
+    background: var(--bg-light-tint); 
+    position: relative;
     text-align: center; width: 100%; scroll-margin-top: 100px;
 }
 .circle-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
@@ -135,15 +158,16 @@ header {
 .circle-img {
     width: 250px; height: 250px; border-radius: 50%;
     background-size: cover; background-position: center; margin: 0 auto 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15); border: 5px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+    border: 5px solid var(--bg-light-tint);
 }
 .circle-item h3 { text-transform: uppercase; font-size: 1rem; color: #333; letter-spacing: 1px; }
 
-/* VAGUE DU BAS (Noir #111111) */
+/* VAGUE DU BAS */
 .wave-bottom { 
     position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; z-index: 2; 
 }
-.wave-bottom svg { width: 100%; height: 100px; }
+.wave-bottom svg { width: 100%; height: 100px; fill: #111111; }
 
 /* --- Dark Offer Section --- */
 .dark-offer {
@@ -189,7 +213,8 @@ header {
 
 /* --- Light Service Section --- */
 .light-service {
-    background: #f9f9f9; padding: 100px 0 150px;
+    background: var(--bg-light-tint); 
+    padding: 100px 0 150px;
     position: relative; overflow: hidden; width: 100%;
 }
 .service-grid { display: flex; justify-content: flex-end; position: relative; z-index: 2; }
@@ -202,6 +227,8 @@ header {
 .service-text h2 { font-size: 2rem; margin-bottom: 25px; color: var(--text-dark); }
 .service-text p { margin-bottom: 20px; color: #555; font-size: 0.95rem; }
 .wave-footer { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; z-index: 3; }
+/* Vague remplie avec le bleu foncé pour matcher le footer */
+.wave-footer svg { fill: var(--primary-dark); }
 
 /* --- Footer --- */
 footer { color: #fff; width: 100%; }
@@ -253,12 +280,12 @@ footer { color: #fff; width: 100%; }
     .offer-image-box { width: 100%; max-width: 400px; height: auto; aspect-ratio: 1/1; }
     
     .service-grid { flex-direction: column; }
-    .service-text { width: 100%; padding: 30px; background: rgba(255,255,255,0.85); }
+    .service-text { width: 100%; padding: 30px; background: rgba(240, 244, 248, 0.9); }
     .light-service::before { width: 100%; height: 100%; }
     
     .nav-active {
         display: flex; flex-direction: column; position: absolute;
-        right: 0; top: 70px; background: #fff; width: 100%;
+        right: 0; top: 70px; background: var(--bg-light-tint); width: 100%;
         padding: 20px; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 }
