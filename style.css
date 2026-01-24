@@ -4,11 +4,8 @@
     --logo-red: rgb(100, 44, 62);      /* Rouge bordeaux */
     --primary-accent: #00a8e8;         /* Cyan vif */
     
-    /* Couleur sombre pour le texte (Noir Profond #0f0f0f) */
-    --text-dark: #0f0f0f;
-    
-    /* Couleur claire pour le texte sur fond sombre */
-    --text-light: #f4f4f4;
+    --text-dark: #0f0f0f; /* Noir profond */
+    --text-light: #f4f4f4; /* Blanc cassé */
     
     --font-main: 'Roboto', sans-serif;
     --font-title: 'Playfair Display', serif;
@@ -23,13 +20,12 @@ html {
 
 body {
     font-family: var(--font-main);
-    /* Par défaut, texte sombre car la majorité des blocs sont clairs */
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
     
-    /* Fond en dégradé */
+    /* Fond dégradé */
     background-image: linear-gradient(135deg, var(--primary-dark) 0%, var(--logo-red) 100%);
     background-attachment: fixed;
     background-size: cover;
@@ -108,7 +104,7 @@ header {
 .nav-links { display: flex; gap: 20px; }
 .nav-links a { 
     font-size: 1.1rem; 
-    color: var(--text-dark); /* Noir profond */
+    color: var(--text-dark); 
     font-weight: 500; 
 }
 .nav-links a:hover, .nav-links a.active { color: var(--primary-accent); }
@@ -131,7 +127,7 @@ header {
 .hero-content { width: 50%; padding-right: 5%; position: relative; z-index: 2; }
 .hero-text-box {
     background: rgba(60, 60, 60, 0.85);
-    color: var(--text-light); /* Texte blanc pour fond sombre */
+    color: var(--text-light); 
     padding: 40px;
     position: relative;
 }
@@ -155,7 +151,7 @@ header {
 .services-circles {
     padding: 80px 0 150px; 
     background: #ffffff; 
-    color: var(--text-dark); /* Noir profond */
+    color: var(--text-dark); 
     position: relative;
     text-align: center; width: 100%; scroll-margin-top: 100px;
 }
@@ -178,7 +174,7 @@ header {
 /* --- Dark Offer Section --- */
 .dark-offer {
     background-color: var(--primary-dark);
-    color: var(--text-light); /* Texte blanc */
+    color: var(--text-light);
     padding: 80px 0 120px;
     position: relative;
     width: 100%;
@@ -219,9 +215,8 @@ header {
 
 /* --- Light Service Section --- */
 .light-service {
-    /* Couleur de fond spécifique un peu sombre mais claire (#c2c9d0) */
     background: #c2c9d0; 
-    color: var(--text-dark); /* Noir profond */
+    color: var(--text-dark);
     padding: 100px 0 150px;
     position: relative; overflow: hidden; width: 100%;
 }
@@ -248,22 +243,45 @@ footer { color: var(--text-light); width: 100%; }
 .phone-icon { font-size: 2rem; margin-bottom: 25px; display: block; transform: rotate(90deg); color: var(--text-light); }
 .footer-top h3 { font-size: 1.6rem; margin-bottom: 30px; font-weight: 400; max-width: 800px; line-height: 1.4; }
 
-/* FOND BLANC POUR LE BAS DE FOOTER */
 .footer-bottom {
     background-color: #ffffff;
-    color: var(--text-dark); /* Noir profond */
+    color: var(--text-dark); 
     padding: 60px 0 20px; 
     position: relative;
 }
 .footer-grid { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; text-align: center; }
 .footer-col { flex: 1; min-width: 250px; margin-bottom: 30px; }
-/* Titres du footer en noir ou bleu foncé ? Ici gardons Primary Dark pour les titres */
 .footer-col h4 { font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-dark); }
-/* Les paragraphes en noir profond */
 .footer-col p { color: var(--text-dark); }
-.footer-col p i { margin-right: 8px; }
 
-.footer-logo-img { max-height: 70px; width: auto; display: block; margin: 0 auto 20px auto; }
+/* -- Modification pour les logos centrés -- */
+.footer-logo {
+    display: flex;             /* Active Flexbox */
+    align-items: center;       /* Centre verticalement */
+    justify-content: center;   /* Centre horizontalement */
+    gap: 20px;                 /* Espace entre le logo BRU et Instagram */
+    margin-bottom: 20px;
+}
+
+.footer-logo-img { 
+    max-height: 70px; 
+    width: auto; 
+    display: block; 
+    /* suppression des marges automatiques car géré par flex */
+    margin: 0; 
+}
+
+/* Style du logo Instagram */
+.social-icon {
+    font-size: 2.5rem; /* Taille de l'icône */
+    color: var(--primary-dark); /* Couleur par défaut */
+    display: flex;
+    align-items: center;
+}
+.social-icon:hover {
+    color: var(--logo-red); /* Couleur au survol */
+}
+
 .big-phone { font-size: 1.5rem; font-weight: bold; color: var(--primary-accent); }
 
 .copyright { 
@@ -272,7 +290,7 @@ footer { color: var(--text-light); width: 100%; }
     padding-top: 20px; 
     margin-top: 20px; 
     font-size: 0.8rem;
-    color: #666; /* Un peu plus clair pour le copyright */
+    color: #666; 
 }
 .scroll-top {
     position: absolute; bottom: 20px; right: 20px;
