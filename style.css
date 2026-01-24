@@ -8,7 +8,11 @@
     --font-title: 'Playfair Display', serif;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    /* AJOUT : Augmentation globale de la taille de police de 3% */
+    font-size: 103%; 
+}
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -135,7 +139,7 @@ header {
 }
 .wave-bottom svg { width: 100%; height: 100px; }
 
-/* --- Dark Offer Section (TEXTE GAUCHE + IMAGE DROITE) --- */
+/* --- Dark Offer Section --- */
 .dark-offer {
     background-color: #111111; /* Fond Noir Uni */
     color: #fff;
