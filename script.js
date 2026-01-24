@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (burger) {
         burger.addEventListener('click', () => {
+            // Bascule l'affichage du menu
             nav.classList.toggle('nav-active');
+            
+            // Bascule l'animation du burger (pour faire la croix)
             burger.classList.toggle('toggle');
         });
     }
@@ -15,11 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             nav.classList.remove('nav-active');
+            // Important : remettre le burger en forme "normale"
             burger.classList.remove('toggle');
         });
     });
 
-    // Gestion du bouton Scroll Top
+    // Gestion du bouton Scroll Top (Apparition au scroll)
     const scrollTopBtn = document.querySelector('.scroll-top');
     if (scrollTopBtn) {
         window.addEventListener('scroll', () => {
