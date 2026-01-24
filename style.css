@@ -289,32 +289,76 @@ footer { color: var(--text-light); width: 100%; }
     visibility: visible;
 }
 
-/* --- RESPONSIVE --- */
-@media screen and (max-width: 1024px) {
-    .nav-links { display: none; }
-    .burger { display: block; }
-    .hero-content { width: 80%; }
-    
-    .offer-grid { flex-direction: column; gap: 40px; }
-    .offer-text { max-width: 100%; width: 100%; text-align: center; }
-    .offer-image-box { width: 100%; max-width: 400px; height: auto; aspect-ratio: 1/1; }
-    
-    .service-grid { flex-direction: column; }
-    .service-text { width: 100%; padding: 30px; background: rgba(240, 244, 248, 0.9); }
-    .light-service::before { width: 100%; height: 100%; }
-    
-    .nav-active {
-        display: flex; flex-direction: column; position: absolute;
-        right: 0; top: 70px; background: #ffffff; width: 100%;
-        padding: 20px; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        color: var(--text-dark);
-    }
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+/* --- GRANDS ÉCRANS (Supérieurs à 1920px - 4K / iMac) --- */
+@media screen and (min-width: 1921px) {
+    html { font-size: 120%; }
+    .container { max-width: 1600px; }
+    .hero { min-height: 900px; }
+    .hero-text-box { padding: 60px; max-width: 900px; }
+    .circle-item { width: 400px; }
+    .circle-img { width: 300px; height: 300px; }
+    .offer-grid, .service-grid { gap: 100px; }
+    .offer-image-box { flex: 0 0 500px; width: 500px; height: 500px; }
+    .offer-text p, .service-text p { max-width: 800px; line-height: 1.8; }
+    .footer-top h3 { font-size: 2rem; max-width: 1000px; }
+    .footer-bottom { padding: 80px 0 40px; }
 }
 
+/* --- TABLETTES & ÉCRANS MOYENS (Max 1024px) --- */
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        position: absolute; right: 0; top: 80px;
+        background-color: #ffffff;
+        display: flex; flex-direction: column; align-items: center;
+        width: 100%;
+        transform: translateX(100%); transition: transform 0.4s ease-in;
+        padding: 40px 0; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 900;
+    }
+    .nav-links.nav-active { transform: translateX(0%); }
+    .nav-links li { margin: 20px 0; opacity: 0; animation: navLinkFade 0.5s ease forwards 0.3s; }
+    @keyframes navLinkFade { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+    
+    .burger { display: block; margin-left: 20px; }
+    
+    .hero-content { width: 80%; padding-right: 0; margin: 0 auto; }
+    .hero-text-box { text-align: center; background: rgba(60, 60, 60, 0.9); }
+    
+    .offer-grid, .service-grid { flex-direction: column; gap: 50px; justify-content: center; }
+    .offer-text, .service-text { max-width: 100%; width: 100%; text-align: center; padding: 0; }
+    .service-text { padding: 20px; }
+    .offer-image-box { width: 80%; max-width: 500px; height: auto; aspect-ratio: 1/1; margin: 0 auto; }
+}
+
+/* --- SMARTPHONES (Max 768px) --- */
 @media screen and (max-width: 768px) {
-    .hero-content { width: 100%; padding: 0 20px; }
-    .hero-text-box { padding: 20px; }
+    html { font-size: 95%; }
+    .container { padding: 0 15px; }
+    .btn-phone { font-size: 0.9rem; padding: 8px 15px; }
+    .header-logo-img { max-height: 40px; }
+    
+    .hero { min-height: 600px; align-items: center; justify-content: center; padding-top: 60px; }
+    .hero-content { width: 100%; padding: 0 10px; }
+    .hero-text-box h1 { font-size: 1.6rem; }
+    
+    .services-circles { padding: 50px 0 100px; }
+    .circle-grid { flex-direction: column; align-items: center; gap: 40px; }
     .circle-item { width: 100%; }
-    .footer-grid { flex-direction: column; }
-    .footer-col { margin-bottom: 40px; }
+    
+    .footer-top { padding: 40px 20px; }
+    .footer-top h3 { font-size: 1.3rem; }
+    .footer-grid { flex-direction: column; text-align: center; }
+    .footer-col { margin-bottom: 40px; width: 100%; }
+    .footer-logo { flex-direction: row; margin-bottom: 15px; }
+    .big-phone { font-size: 1.8rem; }
+    .scroll-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+}
+
+/* --- TRES PETITS ECRANS (Max 400px) --- */
+@media screen and (max-width: 400px) {
+    .btn-phone { display: none; }
+    .nav-container { justify-content: space-between; }
 }
