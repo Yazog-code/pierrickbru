@@ -270,8 +270,8 @@ footer { color: var(--text-light); width: 100%; }
 
 /* --- BOUTON SCROLL TOP STICKY --- */
 .scroll-top {
-    position: fixed;   /* Fixe à l'écran */
-    bottom: 50px;      /* Remonté un peu plus haut */
+    position: fixed;   
+    bottom: 50px;      
     right: 30px;
     background: var(--primary-dark); 
     color: var(--text-light);
@@ -279,9 +279,7 @@ footer { color: var(--text-light); width: 100%; }
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center; 
     cursor: pointer;
-    z-index: 9999;     /* Toujours au-dessus */
-    
-    /* Animation d'apparition */
+    z-index: 9999;     
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
