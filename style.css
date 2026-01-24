@@ -9,6 +9,10 @@
     --font-title: 'Playfair Display', serif;
 }
 
+html {
+    scroll-behavior: smooth; /* Défilement fluide */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +23,7 @@ body {
     font-family: var(--font-main);
     color: var(--text-dark);
     line-height: 1.6;
-    overflow-x: hidden; /* Empêche le scroll horizontal */
+    overflow-x: hidden;
     width: 100%;
 }
 
@@ -102,13 +106,13 @@ header {
 .burger { display: none; cursor: pointer; }
 .burger div { width: 25px; height: 3px; background-color: var(--text-dark); margin: 5px; transition: 0.3s; }
 
-/* --- Hero Section (FULL WIDTH) --- */
+/* --- Hero Section --- */
 .hero {
     position: relative;
     height: 100vh;
     min-height: 700px;
     width: 100%;
-    /* Image de fond en pleine largeur */
+    /* Image pleine largeur */
     background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -134,7 +138,11 @@ header {
 .hero-text-box p { font-size: 0.95rem; margin-bottom: 15px; font-weight: 300; }
 .hero-text-box strong { font-weight: 700; color: #aaddff; }
 
+/* Arrow Down Style */
 .arrow-down {
+    display: block;
+    color: #fff;
+    cursor: pointer;
     text-align: center;
     margin-top: 20px;
     font-size: 1.5rem;
@@ -164,6 +172,8 @@ header {
     position: relative;
     text-align: center;
     width: 100%;
+    /* Offset pour le menu fixe lors du scroll */
+    scroll-margin-top: 100px;
 }
 
 .circle-grid {
@@ -203,13 +213,12 @@ header {
 }
 .wave-bottom svg { width: 100%; height: 100px; }
 
-/* --- Dark Offer Section (FULL WIDTH CORRIGÉ) --- */
+/* --- Dark Offer Section (Full Width & Fix Image) --- */
 .dark-offer {
     background-color: #111;
-    /* Image à droite, fondu noir à gauche */
+    /* Dégradé noir gauche, Image droite */
     background-image: linear-gradient(to right, #111 0%, #111 40%, transparent 80%),
                       url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -232,7 +241,7 @@ header {
 .offer-text p { margin-bottom: 20px; font-size: 0.95rem; color: #ccc; }
 .offer-text strong { color: #fff; }
 
-/* --- Light Service Section (MODIFIÉ : FULL WIDTH) --- */
+/* --- Light Service Section (Full Width) --- */
 .light-service {
     background: #f9f9f9;
     padding: 100px 0 150px;
@@ -248,16 +257,16 @@ header {
     z-index: 2;
 }
 
-/* MODIFICATION ICI : Largeur passée à 100% */
+/* Image Full Width faded */
 .light-service::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* AVANT: 60%, MAINTENANT: 100% pour couvrir tout le fond */
+    width: 100%; /* Couvre 100% de la largeur */
     height: 100%;
     background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
-    opacity: 0.15; /* Opacité légèrement réduite pour que le texte reste lisible */
+    opacity: 0.15;
     z-index: 1;
 }
 
@@ -283,15 +292,42 @@ header {
 /* --- Footer --- */
 footer { color: #fff; width: 100%; }
 
+/* --- Footer Top (Centrage Optimisé) --- */
 .footer-top {
     background-color: var(--primary-dark);
-    padding: 80px 20px 60px;
+    /* On enlève le gros padding-top pour centrer visuellement avec la vague */
+    padding: 0 20px 70px;
+    
+    /* Centrage Flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    
+    /* Ajustement de position */
+    margin-top: -1px;
+    position: relative;
+    z-index: 5;
 }
 
-.phone-icon { font-size: 2rem; margin-bottom: 20px; display: block; transform: rotate(90deg); }
-.footer-top h3 { font-size: 1.5rem; margin-bottom: 25px; font-weight: 400; }
+.phone-icon { 
+    font-size: 2rem; 
+    margin-bottom: 25px; 
+    display: block; 
+    transform: rotate(90deg); 
+    color: #fff;
+}
 
+.footer-top h3 { 
+    font-size: 1.6rem; 
+    margin-bottom: 30px; 
+    font-weight: 400; 
+    max-width: 800px;
+    line-height: 1.4;
+}
+
+/* --- Footer Bottom --- */
 .footer-bottom {
     background-color: var(--primary-gold);
     color: var(--text-dark);
@@ -348,6 +384,7 @@ footer { color: #fff; width: 100%; }
     .burger { display: block; }
     .hero-content { width: 80%; }
     
+    /* Correction Dark Mobile */
     .dark-offer {
         background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
                           url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
@@ -356,7 +393,6 @@ footer { color: #fff; width: 100%; }
     .offer-text { width: 100%; padding: 30px; background: rgba(0,0,0,0.5); }
     
     .service-grid { flex-direction: column; }
-    /* Sur mobile, on remet le fond blanc opaque pour la lisibilité */
     .service-text { width: 100%; padding: 30px; background: rgba(255,255,255,0.85); }
     .light-service::before { width: 100%; height: 100%; }
     
@@ -373,4 +409,5 @@ footer { color: #fff; width: 100%; }
     .circle-item { width: 100%; }
     .footer-grid { flex-direction: column; }
     .footer-col { margin-bottom: 40px; }
+    .footer-top h3 { font-size: 1.3rem; }
 }
