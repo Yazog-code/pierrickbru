@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
         burger.addEventListener('click', () => {
             // Toggle Nav
             nav.classList.toggle('nav-active');
-
             // Animation Burger
             burger.classList.toggle('toggle');
         });
@@ -31,7 +30,7 @@ function scrollToTop() {
     });
 }
 
-// Changement de style header au scroll (Optionnel)
+// Changement de style header au scroll
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (header) {
