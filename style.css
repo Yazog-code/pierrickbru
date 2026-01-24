@@ -1,11 +1,9 @@
 /* --- Variables & Reset --- */
 :root {
-    /* --- COULEURS IDENTITÉ (RGB/Hex) --- */
-    --primary-dark: rgb(35, 50, 62);   /* Bleu foncé du logo */
-    --logo-red: rgb(100, 44, 62);      /* Rouge du logo */
-    --primary-accent: #00a8e8;         /* Cyan vif (splash) */
+    --primary-dark: rgb(35, 50, 62);   /* Bleu foncé */
+    --logo-red: rgb(100, 44, 62);      /* Rouge bordeaux */
+    --primary-accent: #00a8e8;         /* Cyan */
     
-    /* Couleur de fond claire harmonisée */
     --bg-light-tint: #f0f4f8; 
     
     --text-dark: #333;
@@ -16,7 +14,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 103%; /* Taille globale augmentée */
+    font-size: 103%;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,8 +25,11 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
-    /* Fond général du site */
-    background-color: var(--bg-light-tint);
+    /* Fond dégradé global */
+    background-image: linear-gradient(135deg, var(--primary-dark) 0%, var(--logo-red) 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
 }
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
@@ -44,9 +45,8 @@ ul { list-style: none; }
     border-radius: 30px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    font-size: 1.1rem; /* +10% */
+    font-size: 1.1rem;
 }
-
 .btn-white {
     display: inline-block;
     background: #fff;
@@ -56,10 +56,6 @@ ul { list-style: none; }
     font-weight: bold;
     margin-top: 20px;
 }
-.btn-white:hover {
-    color: var(--primary-accent);
-}
-
 .btn-white-rounded {
     display: inline-block;
     background: #fff;
@@ -69,11 +65,6 @@ ul { list-style: none; }
     font-weight: bold;
     margin-top: 20px;
 }
-.btn-white-rounded:hover {
-    background: var(--primary-accent); /* Survol Cyan */
-    color: #fff;
-}
-
 .btn-dark {
     display: inline-block;
     background: var(--primary-dark);
@@ -82,9 +73,6 @@ ul { list-style: none; }
     border-radius: 30px;
     font-weight: bold;
     margin-top: 20px;
-}
-.btn-dark:hover {
-    background: var(--logo-red); /* Survol Rouge Logo */
 }
 
 /* --- Header --- */
@@ -102,7 +90,7 @@ header {
 
 .nav-links { display: flex; gap: 20px; }
 .nav-links a { 
-    font-size: 1.1rem; /* +10% */
+    font-size: 1.1rem;
     color: #666; 
     font-weight: 500; 
 }
@@ -163,15 +151,17 @@ header {
 }
 .circle-item h3 { text-transform: uppercase; font-size: 1rem; color: #333; letter-spacing: 1px; }
 
-/* VAGUE DU BAS */
+/* VAGUE DU BAS (Couleur bleue modifiée) */
 .wave-bottom { 
     position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; z-index: 2; 
 }
-.wave-bottom svg { width: 100%; height: 100px; fill: #111111; }
+/* La vague utilise le bleu foncé (primary-dark) */
+.wave-bottom svg { width: 100%; height: 100px; fill: var(--primary-dark); }
 
-/* --- Dark Offer Section --- */
+/* --- Dark Offer Section (COULEUR MODIFIÉE) --- */
 .dark-offer {
-    background-color: #111111;
+    /* Changement de fond vers le bleu rgb(35, 50, 62) */
+    background-color: var(--primary-dark);
     color: #fff;
     padding: 80px 0 120px;
     position: relative;
@@ -227,7 +217,6 @@ header {
 .service-text h2 { font-size: 2rem; margin-bottom: 25px; color: var(--text-dark); }
 .service-text p { margin-bottom: 20px; color: #555; font-size: 0.95rem; }
 .wave-footer { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; z-index: 3; }
-/* Vague remplie avec le bleu foncé pour matcher le footer */
 .wave-footer svg { fill: var(--primary-dark); }
 
 /* --- Footer --- */
@@ -241,7 +230,6 @@ footer { color: #fff; width: 100%; }
 .phone-icon { font-size: 2rem; margin-bottom: 25px; display: block; transform: rotate(90deg); color: #fff; }
 .footer-top h3 { font-size: 1.6rem; margin-bottom: 30px; font-weight: 400; max-width: 800px; line-height: 1.4; }
 
-/* FOND BLANC POUR LE BAS DE FOOTER */
 .footer-bottom {
     background-color: #ffffff;
     color: var(--text-dark);
