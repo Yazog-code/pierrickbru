@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (burger) {
         burger.addEventListener('click', () => {
-            // Toggle Nav
             nav.classList.toggle('nav-active');
-            // Animation Burger
             burger.classList.toggle('toggle');
         });
     }
@@ -22,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Scroll to Top Function
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -30,7 +27,6 @@ function scrollToTop() {
     });
 }
 
-// Changement de style header au scroll
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (header) {
