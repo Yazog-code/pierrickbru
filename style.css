@@ -10,8 +10,7 @@
 
 html {
     scroll-behavior: smooth;
-    /* AJOUT : Augmentation globale de la taille de police de 3% */
-    font-size: 103%; 
+    font-size: 103%; /* Taille globale augmentée précédemment */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,6 +36,8 @@ ul { list-style: none; }
     border-radius: 30px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* MODIFICATION : Taille augmentée pour le téléphone */
+    font-size: 1.1rem;
 }
 .btn-white {
     display: inline-block;
@@ -78,9 +79,16 @@ header {
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
 .header-logo-img { max-height: 50px; width: auto; display: block; }
+
 .nav-links { display: flex; gap: 20px; }
-.nav-links a { font-size: 0.9rem; color: #666; font-weight: 500; }
+/* MODIFICATION : Taille augmentée pour le menu (110%) */
+.nav-links a { 
+    font-size: 1.1rem; /* Au lieu de 0.9rem */
+    color: #666; 
+    font-weight: 500; 
+}
 .nav-links a:hover, .nav-links a.active { color: #a52a2a; }
+
 .burger { display: none; cursor: pointer; }
 .burger div { width: 25px; height: 3px; background-color: var(--text-dark); margin: 5px; transition: 0.3s; }
 
@@ -141,7 +149,7 @@ header {
 
 /* --- Dark Offer Section --- */
 .dark-offer {
-    background-color: #111111; /* Fond Noir Uni */
+    background-color: #111111;
     color: #fff;
     padding: 80px 0 120px;
     position: relative;
@@ -155,7 +163,6 @@ header {
     gap: 60px;
 }
 
-/* Texte */
 .offer-text {
     flex: 1;
     max-width: 60%;
@@ -165,7 +172,6 @@ header {
 .offer-text p { margin-bottom: 20px; font-size: 0.95rem; color: #ccc; }
 .offer-text strong { color: #fff; }
 
-/* Image Carrée */
 .offer-image-box {
     flex: 0 0 350px;
     width: 350px;
@@ -233,7 +239,6 @@ footer { color: #fff; width: 100%; }
     .burger { display: block; }
     .hero-content { width: 80%; }
     
-    /* Correction Responsive Dark Section */
     .offer-grid { flex-direction: column; gap: 40px; }
     .offer-text { max-width: 100%; width: 100%; text-align: center; }
     .offer-image-box { width: 100%; max-width: 400px; height: auto; aspect-ratio: 1/1; }
