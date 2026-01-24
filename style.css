@@ -1,9 +1,11 @@
 /* --- Variables & Reset --- */
 :root {
-    --primary-dark: rgb(35, 50, 62);   /* Bleu foncé */
-    --logo-red: rgb(100, 44, 62);      /* Rouge bordeaux */
-    --primary-accent: #00a8e8;         /* Cyan */
+    /* --- COULEURS IDENTITÉ (RGB/Hex) --- */
+    --primary-dark: rgb(35, 50, 62);   /* Bleu foncé du logo */
+    --logo-red: rgb(100, 44, 62);      /* Rouge du logo */
+    --primary-accent: #00a8e8;         /* Cyan vif (splash) */
     
+    /* Couleur de fond claire harmonisée */
     --bg-light-tint: #f0f4f8; 
     
     --text-dark: #333;
@@ -14,7 +16,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 103%;
+    font-size: 103%; /* Taille globale augmentée */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,8 +47,9 @@ ul { list-style: none; }
     border-radius: 30px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* +10% */
 }
+
 .btn-white {
     display: inline-block;
     background: #fff;
@@ -56,6 +59,10 @@ ul { list-style: none; }
     font-weight: bold;
     margin-top: 20px;
 }
+.btn-white:hover {
+    color: var(--primary-accent);
+}
+
 .btn-white-rounded {
     display: inline-block;
     background: #fff;
@@ -65,6 +72,11 @@ ul { list-style: none; }
     font-weight: bold;
     margin-top: 20px;
 }
+.btn-white-rounded:hover {
+    background: var(--primary-accent); /* Survol Cyan */
+    color: #fff;
+}
+
 .btn-dark {
     display: inline-block;
     background: var(--primary-dark);
@@ -73,6 +85,9 @@ ul { list-style: none; }
     border-radius: 30px;
     font-weight: bold;
     margin-top: 20px;
+}
+.btn-dark:hover {
+    background: var(--logo-red); /* Survol Rouge Logo */
 }
 
 /* --- Header --- */
@@ -90,7 +105,7 @@ header {
 
 .nav-links { display: flex; gap: 20px; }
 .nav-links a { 
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* +10% */
     color: #666; 
     font-weight: 500; 
 }
@@ -230,6 +245,7 @@ footer { color: #fff; width: 100%; }
 .phone-icon { font-size: 2rem; margin-bottom: 25px; display: block; transform: rotate(90deg); color: #fff; }
 .footer-top h3 { font-size: 1.6rem; margin-bottom: 30px; font-weight: 400; max-width: 800px; line-height: 1.4; }
 
+/* FOND BLANC POUR LE BAS DE FOOTER */
 .footer-bottom {
     background-color: #ffffff;
     color: var(--text-dark);
@@ -268,6 +284,7 @@ footer { color: #fff; width: 100%; }
     .offer-image-box { width: 100%; max-width: 400px; height: auto; aspect-ratio: 1/1; }
     
     .service-grid { flex-direction: column; }
+    /* Adaptation du fond du texte sur mobile avec la teinte légère */
     .service-text { width: 100%; padding: 30px; background: rgba(240, 244, 248, 0.9); }
     .light-service::before { width: 100%; height: 100%; }
     
