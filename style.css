@@ -148,7 +148,9 @@ header {
     padding: 80px 0 150px; 
     background: #ffffff; 
     color: var(--text-dark); 
+    /* Important : Force cette section à être au-dessus du fond qui dépasse */
     position: relative;
+    z-index: 5;
     text-align: center; width: 100%; scroll-margin-top: 100px;
 }
 .circle-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
@@ -295,7 +297,7 @@ footer { color: var(--text-light); width: 100%; }
 }
 
 /* =========================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (Corrigé et Sécurisé)
    ========================================= */
 
 /* --- GRANDS ÉCRANS (Supérieurs à 1920px - 4K / iMac) --- */
@@ -315,6 +317,7 @@ footer { color: var(--text-light); width: 100%; }
 
 /* --- TABLETTES & ÉCRANS MOYENS (Max 1024px) --- */
 @media screen and (max-width: 1024px) {
+    /* Menu */
     .nav-links {
         position: absolute; right: 0; top: 80px;
         background-color: #ffffff;
@@ -327,8 +330,18 @@ footer { color: var(--text-light); width: 100%; }
     .nav-links li { margin: 20px 0; opacity: 0; animation: navLinkFade 0.5s ease forwards 0.3s; }
     @keyframes navLinkFade { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
     
-    .burger { display: block; margin-left: 20px; }
+    .burger { display: block; margin-left: 20px; z-index: 1001; }
     
+    /* Header (Centrage Bouton Tel Absolu) */
+    .nav-container { position: relative; justify-content: space-between; height: 60px; }
+    .header-logo-img { max-height: 40px; margin-top: 5px; }
+    .btn-phone {
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.9rem; padding: 8px 15px; white-space: nowrap; margin: 0; z-index: 10;
+    }
+    
+    /* Structure Contenu */
     .hero-content { width: 80%; padding-right: 0; margin: 0 auto; }
     .hero-text-box { text-align: center; background: rgba(60, 60, 60, 0.9); }
     
@@ -336,6 +349,9 @@ footer { color: var(--text-light); width: 100%; }
     .offer-text, .service-text { max-width: 100%; width: 100%; text-align: center; padding: 0; }
     .service-text { padding: 20px; }
     .offer-image-box { width: 80%; max-width: 500px; height: auto; aspect-ratio: 1/1; margin: 0 auto; }
+
+    /* Cercles réduits sur tablette aussi pour éviter l'effet "énorme" */
+    .circle-img { width: 180px; height: 180px; border-width: 3px; }
 }
 
 /* --- SMARTPHONES (Max 768px) --- */
@@ -343,36 +359,32 @@ footer { color: var(--text-light); width: 100%; }
     html { font-size: 95%; }
     .container { padding: 0 15px; }
     
-    /* Header ajusté pour le centrage du bouton */
-    .nav-container {
-        position: relative;
-        justify-content: space-between;
-        height: 60px;
+    /* Correction du "Bloc Gris" sous le Hero */
+    .hero { 
+        min-height: 600px; 
+        align-items: center; 
+        justify-content: center; 
+        padding-top: 80px; 
+        padding-bottom: 50px; /* Laisse place à la vague */
     }
-
-    .header-logo-img { max-height: 40px; margin-top: 5px; }
-
-    /* Bouton téléphone centré en absolu */
-    .btn-phone {
-        position: absolute; left: 50%; top: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 0.9rem; padding: 8px 15px; white-space: nowrap; margin: 0; z-index: 10;
-    }
-
-    .burger { margin-top: 5px; }
-    
-    /* Hero ajusté pour éviter le bloc gris */
-    .hero { min-height: 600px; align-items: center; justify-content: center; padding-top: 80px; padding-bottom: 50px; }
     .hero-content { width: 100%; padding: 0 10px; }
     .hero-text-box h1 { font-size: 1.6rem; }
-    .hero-text-box { margin-bottom: 20px; padding-bottom: 30px; background: rgba(60, 60, 60, 0.9); border-radius: 8px; }
+    
+    /* On force la box à ne pas déborder */
+    .hero-text-box { 
+        margin-bottom: 20px; 
+        padding-bottom: 30px; 
+        background: rgba(60, 60, 60, 0.9); 
+        border-radius: 8px; 
+    }
     
     /* Cercles réduits */
     .services-circles { padding: 40px 0 80px; }
     .circle-grid { flex-direction: column; align-items: center; gap: 30px; }
     .circle-item { width: 100%; }
-    .circle-img { width: 180px; height: 180px; border-width: 3px; }
+    /* La taille 180px est déjà héritée du block tablette ci-dessus */
     
+    /* Footer */
     .footer-top { padding: 40px 20px; }
     .footer-top h3 { font-size: 1.3rem; }
     .footer-grid { flex-direction: column; text-align: center; }
@@ -384,6 +396,6 @@ footer { color: var(--text-light); width: 100%; }
 
 /* --- TRES PETITS ECRANS (Max 400px) --- */
 @media screen and (max-width: 400px) {
-    .btn-phone { display: none; }
+    .btn-phone { display: none; } /* On cache le bouton tel si l'écran est minuscule */
     .nav-container { justify-content: space-between; }
 }
