@@ -5,12 +5,11 @@
     --logo-red: rgb(100, 44, 62);      /* Rouge du logo */
     --primary-accent: #00a8e8;         /* Cyan vif (splash) */
     
-    /* Couleur de fond claire, assombrie de 5% supp. (#c2c9d0) */
-    --bg-light-tint: #c2c9d0; 
+    /* Couleur de fond claire "standard" (Header, Cercles) */
+    --bg-light-tint: #dbe2e8; 
     
-    /* Couleurs de texte */
     --text-dark: #333;
-    --text-light: #eaeaea; 
+    --text-light: #f4f4f4;
     --font-main: 'Roboto', sans-serif;
     --font-title: 'Playfair Display', serif;
 }
@@ -24,11 +23,11 @@ html {
 
 body {
     font-family: var(--font-main);
-    color: var(--text-light); /* Texte clair par défaut sur le fond dégradé */
+    color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
-    /* Fond dégradé global */
+    /* Fond dégradé global (visible en arrière-plan) */
     background-image: linear-gradient(135deg, var(--primary-dark) 0%, var(--logo-red) 100%);
     background-attachment: fixed;
     background-size: cover;
@@ -48,7 +47,7 @@ ul { list-style: none; }
     border-radius: 30px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    font-size: 1.1rem; 
+    font-size: 1.1rem; /* +10% */
 }
 
 .btn-white {
@@ -74,7 +73,7 @@ ul { list-style: none; }
     margin-top: 20px;
 }
 .btn-white-rounded:hover {
-    background: var(--primary-accent); 
+    background: var(--primary-accent); /* Survol Cyan */
     color: #fff;
 }
 
@@ -88,7 +87,7 @@ ul { list-style: none; }
     margin-top: 20px;
 }
 .btn-dark:hover {
-    background: var(--logo-red); 
+    background: var(--logo-red); /* Survol Rouge Logo */
 }
 
 /* --- Header --- */
@@ -100,14 +99,13 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    color: var(--text-dark); /* Texte sombre pour le header clair */
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
 .header-logo-img { max-height: 50px; width: auto; display: block; }
 
 .nav-links { display: flex; gap: 20px; }
 .nav-links a { 
-    font-size: 1.1rem; 
+    font-size: 1.1rem; /* +10% */
     color: #666; 
     font-weight: 500; 
 }
@@ -131,7 +129,7 @@ header {
 .hero-content { width: 50%; padding-right: 5%; position: relative; z-index: 2; }
 .hero-text-box {
     background: rgba(60, 60, 60, 0.85);
-    color: var(--text-light); 
+    color: #fff;
     padding: 40px;
     position: relative;
 }
@@ -140,7 +138,7 @@ header {
 .hero-text-box strong { font-weight: 700; color: var(--primary-accent); }
 
 .arrow-down {
-    display: block; color: var(--text-light); cursor: pointer; text-align: center;
+    display: block; color: #fff; cursor: pointer; text-align: center;
     margin-top: 20px; font-size: 1.5rem; animation: bounce 2s infinite;
 }
 @keyframes bounce {
@@ -155,7 +153,6 @@ header {
 .services-circles {
     padding: 80px 0 150px; 
     background: var(--bg-light-tint); 
-    color: var(--text-dark);
     position: relative;
     text-align: center; width: 100%; scroll-margin-top: 100px;
 }
@@ -177,8 +174,9 @@ header {
 
 /* --- Dark Offer Section --- */
 .dark-offer {
+    /* Fond Bleu foncé */
     background-color: var(--primary-dark);
-    color: var(--text-light);
+    color: #fff;
     padding: 80px 0 120px;
     position: relative;
     width: 100%;
@@ -198,7 +196,7 @@ header {
 }
 .offer-text h2 { font-size: 2rem; margin-bottom: 25px; line-height: 1.2; }
 .offer-text p { margin-bottom: 20px; font-size: 0.95rem; color: #ccc; }
-.offer-text strong { color: var(--text-light); }
+.offer-text strong { color: #fff; }
 
 .offer-image-box {
     flex: 0 0 350px;
@@ -217,9 +215,10 @@ header {
     display: block;
 }
 
-/* --- Light Service Section --- */
+/* --- Light Service Section (FOND SPÉCIFIQUE PLUS SOMBRE) --- */
 .light-service {
-    background: var(--bg-light-tint); 
+    /* Utilisation de la couleur #c2c9d0 (gris-bleu plus sombre) */
+    background: #c2c9d0; 
     color: var(--text-dark);
     padding: 100px 0 150px;
     position: relative; overflow: hidden; width: 100%;
@@ -237,14 +236,14 @@ header {
 .wave-footer svg { fill: var(--primary-dark); }
 
 /* --- Footer --- */
-footer { color: var(--text-light); width: 100%; }
+footer { color: #fff; width: 100%; }
 .footer-top {
     background-color: var(--primary-dark);
     padding: 0 20px 70px;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     text-align: center; margin-top: -1px; position: relative; z-index: 5;
 }
-.phone-icon { font-size: 2rem; margin-bottom: 25px; display: block; transform: rotate(90deg); color: var(--text-light); }
+.phone-icon { font-size: 2rem; margin-bottom: 25px; display: block; transform: rotate(90deg); color: #fff; }
 .footer-top h3 { font-size: 1.6rem; margin-bottom: 30px; font-weight: 400; max-width: 800px; line-height: 1.4; }
 
 /* FOND BLANC POUR LE BAS DE FOOTER */
@@ -270,7 +269,7 @@ footer { color: var(--text-light); width: 100%; }
 }
 .scroll-top {
     position: absolute; bottom: 20px; right: 20px;
-    background: var(--primary-dark); color: var(--text-light);
+    background: var(--primary-dark); color: #fff;
     width: 40px; height: 40px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center; cursor: pointer;
 }
@@ -293,7 +292,6 @@ footer { color: var(--text-light); width: 100%; }
         display: flex; flex-direction: column; position: absolute;
         right: 0; top: 70px; background: var(--bg-light-tint); width: 100%;
         padding: 20px; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        color: var(--text-dark);
     }
 }
 
