@@ -270,4 +270,141 @@ footer { color: var(--text-light); width: 100%; }
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin-
+    margin-bottom: 20px;
+}
+.footer-logo-img { max-height: 70px; width: auto; display: block; margin: 0; }
+.social-icon { font-size: 2.5rem; color: var(--primary-dark); display: flex; align-items: center; }
+.social-icon:hover { color: var(--logo-red); }
+
+.big-phone { font-size: 1.5rem; font-weight: bold; color: var(--primary-accent); }
+
+.copyright { 
+    text-align: center; 
+    border-top: 1px solid rgba(0,0,0,0.1); 
+    padding-top: 20px; 
+    margin-top: 20px; 
+    font-size: 0.8rem;
+    color: #666; 
+}
+
+/* --- BOUTON SCROLL TOP STICKY --- */
+.scroll-top {
+    position: fixed;   
+    bottom: 50px;      
+    right: 30px;
+    background: var(--primary-dark); 
+    color: var(--text-light);
+    width: 45px; height: 45px; 
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; 
+    cursor: pointer;
+    z-index: 9999;     
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================= */
+
+/* --- GRANDS ÉCRANS (Supérieurs à 1920px - 4K / iMac) --- */
+@media screen and (min-width: 1921px) {
+    html { font-size: 120%; }
+    .container { max-width: 1600px; }
+    .hero { min-height: 900px; }
+    .hero-text-box { padding: 60px; max-width: 900px; }
+    .circle-item { width: 400px; }
+    .circle-img { width: 300px; height: 300px; }
+    .offer-grid, .service-grid { gap: 100px; }
+    .offer-image-box { flex: 0 0 500px; width: 500px; height: 500px; }
+    .offer-text p, .service-text p { max-width: 800px; line-height: 1.8; }
+    .footer-top h3 { font-size: 2rem; max-width: 1000px; }
+    .footer-bottom { padding: 80px 0 40px; }
+}
+
+/* --- TABLETTES & ÉCRANS MOYENS (Max 1024px) --- */
+@media screen and (max-width: 1024px) {
+    /* Menu Burger */
+    .nav-links {
+        position: absolute; right: 0; top: 80px;
+        background-color: #ffffff;
+        display: flex; flex-direction: column; align-items: center;
+        width: 100%;
+        transform: translateX(100%); transition: transform 0.4s ease-in;
+        padding: 40px 0; box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 900;
+    }
+    .nav-links.nav-active { transform: translateX(0%); }
+    .nav-links li { margin: 20px 0; opacity: 0; animation: navLinkFade 0.5s ease forwards 0.3s; }
+    @keyframes navLinkFade { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+    
+    .burger { display: block; margin-left: 20px; z-index: 1001; }
+    
+    /* Header (Centrage Bouton Tel Absolu) */
+    .nav-container { position: relative; justify-content: space-between; height: 60px; }
+    .header-logo-img { max-height: 40px; margin-top: 5px; }
+    .btn-phone {
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.9rem; padding: 8px 15px; white-space: nowrap; margin: 0; z-index: 10;
+    }
+    
+    /* Structure Contenu */
+    .hero-content { width: 80%; padding-right: 0; margin: 0 auto; }
+    .hero-text-box { text-align: center; background: rgba(60, 60, 60, 0.9); }
+    
+    .offer-grid, .service-grid { flex-direction: column; gap: 50px; justify-content: center; }
+    .offer-text, .service-text { max-width: 100%; width: 100%; text-align: center; padding: 0; }
+    .service-text { padding: 20px; }
+    .offer-image-box { width: 80%; max-width: 500px; height: auto; aspect-ratio: 1/1; margin: 0 auto; }
+
+    /* Cercles réduits sur tablette */
+    .circle-img { width: 180px; height: 180px; border-width: 3px; }
+}
+
+/* --- SMARTPHONES (Max 768px) --- */
+@media screen and (max-width: 768px) {
+    html { font-size: 95%; }
+    .container { padding: 0 15px; }
+    
+    /* Header (Bouton centré) */
+    .nav-container { position: relative; justify-content: space-between; height: 60px; }
+    .header-logo-img { max-height: 40px; margin-top: 5px; }
+    .btn-phone {
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.9rem; padding: 8px 15px; white-space: nowrap; margin: 0; z-index: 10;
+    }
+    .burger { margin-top: 5px; }
+    
+    /* Hero */
+    .hero { min-height: 600px; align-items: center; justify-content: center; padding-top: 80px; padding-bottom: 50px; }
+    .hero-content { width: 100%; padding: 0 10px; }
+    .hero-text-box h1 { font-size: 1.6rem; }
+    .hero-text-box { margin-bottom: 20px; padding-bottom: 30px; background: rgba(60, 60, 60, 0.9); border-radius: 8px; }
+    
+    /* Cercles réduits et espace agrandi en bas pour la vague */
+    .services-circles { padding: 40px 0 180px; }
+    .circle-grid { flex-direction: column; align-items: center; gap: 30px; }
+    .circle-item { width: 100%; }
+    .circle-img { width: 180px; height: 180px; border-width: 3px; }
+    
+    /* Footer */
+    .footer-top { padding: 40px 20px; }
+    .footer-top h3 { font-size: 1.3rem; }
+    .footer-grid { flex-direction: column; text-align: center; }
+    .footer-col { margin-bottom: 40px; width: 100%; }
+    .footer-logo { flex-direction: row; margin-bottom: 15px; }
+    .big-phone { font-size: 1.8rem; }
+    .scroll-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+}
+
+/* --- TRES PETITS ECRANS (Max 400px) --- */
+@media screen and (max-width: 400px) {
+    .btn-phone { display: none; } /* On cache le bouton tel si l'écran est minuscule */
+    .nav-container { justify-content: space-between; }
+}
