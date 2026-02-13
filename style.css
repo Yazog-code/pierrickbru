@@ -1,15 +1,12 @@
 /* --- Variables & Reset --- */
 :root {
-    /* Couleurs de la charte */
-    --primary-dark: rgb(35, 50, 62);   /* Bleu foncé */
-    --logo-red: rgb(100, 44, 62);      /* Rouge bordeaux */
-    --primary-accent: #00a8e8;         /* Cyan vif */
+    --primary-dark: rgb(35, 50, 62);
+    --logo-red: rgb(100, 44, 62);
+    --primary-accent: #00a8e8;
     
-    /* Couleurs de texte et fond */
-    --text-dark: #0f0f0f; /* Noir Profond */
+    --text-dark: #0f0f0f;
     --text-light: #f4f4f4;
     
-    /* Polices */
     --font-main: 'Roboto', sans-serif;
     --font-title: 'Playfair Display', serif;
 }
@@ -27,7 +24,6 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
-    /* Fond dégradé global */
     background-image: linear-gradient(135deg, var(--primary-dark) 0%, var(--logo-red) 100%);
     background-attachment: fixed;
     background-size: cover;
@@ -36,7 +32,6 @@ body {
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
-img { max-width: 100%; display: block; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
@@ -96,8 +91,6 @@ header {
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
 .header-logo-img { max-height: 50px; width: auto; display: block; }
-
-/* Le lien du logo ne doit pas avoir de bordure */
 .logo a { border: none; outline: none; }
 
 .nav-links { display: flex; gap: 20px; }
@@ -108,11 +101,10 @@ header {
 }
 .nav-links a:hover, .nav-links a.active { color: var(--primary-accent); }
 
-/* Burger Menu Icon */
 .burger { display: none; cursor: pointer; }
 .burger div { width: 25px; height: 3px; background-color: var(--text-dark); margin: 5px; transition: 0.3s; }
 
-/* === ANIMATION BURGER EN CROIX === */
+/* Animation Burger */
 .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
 .toggle .line2 { opacity: 0; }
 .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
@@ -123,7 +115,6 @@ header {
     height: 100vh;
     min-height: 700px;
     width: 100%;
-    /* Image de fond */
     background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -159,7 +150,7 @@ header {
     background: #ffffff; 
     color: var(--text-dark); 
     position: relative;
-    z-index: 5; /* Passe au-dessus des débordements éventuels */
+    z-index: 5;
     text-align: center; width: 100%; scroll-margin-top: 100px;
 }
 .circle-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
@@ -178,7 +169,7 @@ header {
 }
 .wave-bottom svg { width: 100%; height: 100px; fill: var(--primary-dark); }
 
-/* --- Dark Offer Section (Intérieur) --- */
+/* --- Dark Offer Section --- */
 .dark-offer {
     background-color: var(--primary-dark);
     color: var(--text-light);
@@ -187,6 +178,7 @@ header {
     width: 100%;
 }
 
+/* Grille flexible utilisée pour Intérieur (Sombre) ET Extérieur (Clair) */
 .offer-grid {
     display: flex;
     align-items: center;
@@ -194,6 +186,7 @@ header {
     gap: 60px;
 }
 
+/* Texte section sombre */
 .offer-text {
     flex: 1;
     max-width: 60%;
@@ -221,20 +214,19 @@ header {
     display: block;
 }
 
-/* --- Light Service Section (Extérieur) --- */
+/* --- Light Service Section --- */
 .light-service {
     background: #c2c9d0; 
     color: var(--text-dark);
     padding: 100px 0 150px;
     position: relative; overflow: hidden; width: 100%;
 }
-.service-grid { display: flex; justify-content: flex-end; position: relative; z-index: 2; }
-.light-service::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
-    opacity: 0.15; z-index: 1;
+
+/* Texte section claire (Flex) */
+.service-text {
+    flex: 1; /* Prend la place restante dans la grille */
+    z-index: 2;
 }
-.service-text { width: 50%; padding-left: 50px; position: relative; z-index: 2; }
 .service-text h2 { font-size: 2rem; margin-bottom: 25px; color: var(--text-dark); }
 .service-text p { margin-bottom: 20px; color: var(--text-dark); font-size: 0.95rem; }
 .service-text ul li { margin-bottom: 8px; color: var(--text-dark); }
@@ -264,7 +256,6 @@ footer { color: var(--text-light); width: 100%; }
 .footer-col h4 { font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-dark); }
 .footer-col p { color: var(--text-dark); }
 
-/* Logos Footer */
 .footer-logo {
     display: flex;
     align-items: center;
@@ -309,10 +300,10 @@ footer { color: var(--text-light); width: 100%; }
 }
 
 /* =========================================
-   RESPONSIVE DESIGN (Media Queries)
+   RESPONSIVE DESIGN
    ========================================= */
 
-/* --- GRANDS ÉCRANS (Supérieurs à 1920px - 4K / iMac) --- */
+/* --- GRANDS ÉCRANS (Supérieurs à 1920px) --- */
 @media screen and (min-width: 1921px) {
     html { font-size: 120%; }
     .container { max-width: 1600px; }
@@ -320,7 +311,7 @@ footer { color: var(--text-light); width: 100%; }
     .hero-text-box { padding: 60px; max-width: 900px; }
     .circle-item { width: 400px; }
     .circle-img { width: 300px; height: 300px; }
-    .offer-grid, .service-grid { gap: 100px; }
+    .offer-grid { gap: 100px; }
     .offer-image-box { flex: 0 0 500px; width: 500px; height: 500px; }
     .offer-text p, .service-text p { max-width: 800px; line-height: 1.8; }
     .footer-top h3 { font-size: 2rem; max-width: 1000px; }
@@ -329,7 +320,6 @@ footer { color: var(--text-light); width: 100%; }
 
 /* --- TABLETTES & ÉCRANS MOYENS (Max 1024px) --- */
 @media screen and (max-width: 1024px) {
-    /* Menu Burger */
     .nav-links {
         position: absolute; right: 0; top: 80px;
         background-color: #ffffff;
@@ -344,7 +334,6 @@ footer { color: var(--text-light); width: 100%; }
     
     .burger { display: block; margin-left: 20px; z-index: 1001; }
     
-    /* Header (Centrage Bouton Tel Absolu) */
     .nav-container { position: relative; justify-content: space-between; height: 60px; }
     .header-logo-img { max-height: 40px; margin-top: 5px; }
     .btn-phone {
@@ -353,16 +342,15 @@ footer { color: var(--text-light); width: 100%; }
         font-size: 0.9rem; padding: 8px 15px; white-space: nowrap; margin: 0; z-index: 10;
     }
     
-    /* Structure Contenu */
     .hero-content { width: 80%; padding-right: 0; margin: 0 auto; }
     .hero-text-box { text-align: center; background: rgba(60, 60, 60, 0.9); }
     
-    .offer-grid, .service-grid { flex-direction: column; gap: 50px; justify-content: center; }
+    /* Passage des grilles en colonne sur tablette */
+    .offer-grid { flex-direction: column; gap: 50px; justify-content: center; }
     .offer-text, .service-text { max-width: 100%; width: 100%; text-align: center; padding: 0; }
     .service-text { padding: 20px; }
     .offer-image-box { width: 80%; max-width: 500px; height: auto; aspect-ratio: 1/1; margin: 0 auto; }
 
-    /* Cercles réduits sur tablette */
     .circle-img { width: 180px; height: 180px; border-width: 3px; }
 }
 
@@ -371,7 +359,6 @@ footer { color: var(--text-light); width: 100%; }
     html { font-size: 95%; }
     .container { padding: 0 15px; }
     
-    /* Header (Bouton centré) */
     .nav-container { position: relative; justify-content: space-between; height: 60px; }
     .header-logo-img { max-height: 40px; margin-top: 5px; }
     .btn-phone {
@@ -381,19 +368,16 @@ footer { color: var(--text-light); width: 100%; }
     }
     .burger { margin-top: 5px; }
     
-    /* Hero */
     .hero { min-height: 600px; align-items: center; justify-content: center; padding-top: 80px; padding-bottom: 50px; }
     .hero-content { width: 100%; padding: 0 10px; }
     .hero-text-box h1 { font-size: 1.6rem; }
     .hero-text-box { margin-bottom: 20px; padding-bottom: 30px; background: rgba(60, 60, 60, 0.9); border-radius: 8px; }
     
-    /* Cercles réduits et espace agrandi en bas pour la vague */
     .services-circles { padding: 40px 0 180px; }
     .circle-grid { flex-direction: column; align-items: center; gap: 30px; }
     .circle-item { width: 100%; }
     .circle-img { width: 180px; height: 180px; border-width: 3px; }
     
-    /* Footer */
     .footer-top { padding: 40px 20px; }
     .footer-top h3 { font-size: 1.3rem; }
     .footer-grid { flex-direction: column; text-align: center; }
@@ -405,6 +389,6 @@ footer { color: var(--text-light); width: 100%; }
 
 /* --- TRES PETITS ECRANS (Max 400px) --- */
 @media screen and (max-width: 400px) {
-    .btn-phone { display: none; } /* On cache le bouton tel si l'écran est minuscule */
+    .btn-phone { display: none; }
     .nav-container { justify-content: space-between; }
 }
