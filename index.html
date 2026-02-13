@@ -3,218 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentions Légales - BRU Peinture</title>
+    <title>BRU Peinture - Artisan Peintre à Saint André de Cubzac</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        /* =========================================
-           CSS (STYLES) - IDENTIQUE À L'ACCUEIL + SECTION LÉGALE
-           ========================================= */
-        
-        :root {
-            --primary-dark: rgb(35, 50, 62);
-            --logo-red: rgb(100, 44, 62);
-            --primary-accent: #00a8e8;
-            --text-dark: #0f0f0f;
-            --text-light: #f4f4f4;
-            --font-main: 'Roboto', sans-serif;
-            --font-title: 'Playfair Display', serif;
-        }
-
-        html { scroll-behavior: smooth; font-size: 103%; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: var(--font-main);
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: #f9f9f9; /* Fond gris clair pour cette page */
-        }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-        img { max-width: 100%; display: block; }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* --- Header --- */
-        header {
-            background: #ffffff; padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .header-logo-img { max-height: 50px; width: auto; display: block; }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { font-size: 1.1rem; color: var(--text-dark); font-weight: 500; }
-        .nav-links a:hover { color: var(--primary-accent); }
-        .btn-phone {
-            background: #fff; color: var(--text-dark); padding: 10px 20px; border-radius: 30px;
-            font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1); font-size: 1.1rem;
-        }
-        
-        /* Burger Menu (CSS simplifié pour cette page) */
-        .burger { display: none; cursor: pointer; }
-        .burger div { width: 25px; height: 3px; background-color: var(--text-dark); margin: 5px; }
-
-        /* --- SECTION LÉGALE --- */
-        .legal-section {
-            padding: 140px 0 80px; /* Marge haute pour le header fixe */
-            min-height: 80vh;
-        }
-
-        .legal-content {
-            background: #fff;
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .legal-content h1 {
-            font-family: var(--font-title);
-            color: var(--primary-dark);
-            margin-bottom: 40px;
-            text-align: center;
-            font-size: 2.5rem;
-        }
-
-        .legal-content h2 {
-            font-family: var(--font-main);
-            color: var(--logo-red);
-            font-size: 1.3rem;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        .legal-content p { margin-bottom: 15px; color: #444; text-align: justify; }
-        .legal-content strong { color: var(--text-dark); font-weight: 600; }
-        .legal-content ul { padding-left: 20px; list-style: disc; margin-bottom: 20px; }
-        
-        .btn-back {
-            display: inline-flex; align-items: center; gap: 10px;
-            margin-bottom: 30px; font-weight: bold; color: var(--primary-dark);
-        }
-        .btn-back:hover { color: var(--primary-accent); }
-
-        /* --- Footer --- */
-        footer { background-color: var(--primary-dark); color: var(--text-light); padding: 40px 0 20px; margin-top: auto; }
-        .copyright { text-align: center; font-size: 0.8rem; opacity: 0.8; }
-
-        /* Responsive */
-        @media screen and (max-width: 1024px) {
-            .nav-links { display: none; } /* On cache le menu sur mobile pour simplifier cette page */
-            .btn-phone { display: none; }
-            .burger { display: block; } /* On affiche le burger mais il ne servira qu'au retour accueil */
-            .legal-content { padding: 25px; }
-            .legal-content h1 { font-size: 2rem; }
-        }
-    </style>
 </head>
 <body>
 
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <a href="index.html">
+                <a href="#accueil" aria-label="Retour à l'accueil">
                     <img src="Logo Bru peinture sans fond.webp" alt="Logo BRU Peinture" class="header-logo-img">
                 </a>
             </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Retour à l'accueil</a></li>
+                    <li><a href="#accueil" class="active">Accueil</a></li>
+                    <li><a href="#interieur">Travaux Intérieurs</a></li>
+                    <li><a href="#exterieur">Travaux Extérieurs</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <a href="tel:0615021766" class="btn-phone">06 15 02 17 66</a>
-            <div class="burger" onclick="window.location.href='index.html'">
-                <i class="fas fa-home" style="font-size: 1.5rem;"></i>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
         </div>
     </header>
 
-    <section class="legal-section">
-        <div class="container">
-            <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Retour au site</a>
-            
-            <div class="legal-content">
-                <h1>Mentions Légales</h1>
-
-                <h2>1. Éditeur du site</h2>
-                <p>
-                    En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :
-                </p>
-                <p>
-                    <strong>Propriétaire et Responsable de publication :</strong> Pierrick BRU<br>
-                    <strong>Nom commercial :</strong> BRU PEINTURE<br>
-                    <strong>Statut juridique :</strong> Entreprise Individuelle (EI)<br>
-                    <strong>Adresse postale :</strong> 2 rue de l’Atlantique, 33240 VIRSAC<br>
-                    <strong>Téléphone :</strong> 06 15 02 17 66<br>
-                    <strong>Email :</strong> bru.peinture@gmail.com
-                </p>
-
-                <h2>2. Immatriculation</h2>
-                <p>
-                    L'entreprise est immatriculée au Registre National des Entreprises (RNE) et/ou au Répertoire des Métiers (RM).<br>
-                    <strong>Numéro SIRET :</strong> 891 880 908 00019<br>
-                    <strong>Immatriculation RM :</strong> 891 880 908 RM 33<br>
-                    <strong>TVA :</strong> TVA non applicable, article 293B du CGI.
-                </p>
-
-                <h2>3. Hébergement du site</h2>
-                <p>
-                    Le site est hébergé par :<br>
-                    <strong>Nom de l'hébergeur :</strong> LWS<br>
-                    <strong>Adresse :</strong> [10 Rue de Penthièvre, 75008 Paris<br>
-                    <strong>Site web :</strong> https://www.lws.fr/
-                </p>
-
-                <h2>4. Assurance Professionnelle & Garanties</h2>
-                <p>
-                    Conformément à la législation en vigueur pour les artisans du bâtiment ne touchant pas à la structure, l'entreprise BRU PEINTURE est couverte par une <strong>Assurance Responsabilité Civile Professionnelle (RC Pro)</strong>.
-                </p>
-                <p>
-                    <strong>Assureur :</strong> [NOM DE VOTRE ASSUREUR À COMPLÉTER ICI]<br>
-                    <strong>Couverture géographique :</strong> Garantie valable pour les travaux effectués dans un rayon de 40 kms autour de Virsac (33240).
-                </p>
-                <p>
-                    <em>Note : L'activité de peinture décorative et de revêtements ne touchant pas au gros œuvre ni à l'étanchéité n'est pas soumise à l'obligation d'assurance décennale.</em>
-                </p>
-
-                <h2>5. Conditions de prix et d'intervention</h2>
-                <p>
-                    <strong>Devis :</strong> Les devis sont gratuits et établis sur demande avant toute prestation.<br>
-                    <strong>Tarification :</strong> La facturation est établie au m² (mètre carré) en fonction de la nature des supports et des finitions demandées.<br>
-                    <strong>Frais de déplacement :</strong> Aucun frais de déplacement n'est facturé pour les chantiers situés dans la zone d'intervention (40km autour de Virsac).
-                </p>
-
-                <h2>6. Propriété intellectuelle</h2>
-                <p>
-                    Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site (textes, images, graphismes, logo), quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de Pierrick BRU.
-                </p>
-
-                <h2>7. Données personnelles</h2>
-                <p>
-                    Aucune informations n’est recueilli sur le site. Le CTA Contact ouvre votre boite mail mais ne stocke aucun données. Les cookies utilisées sont uniquement les cookies permettant le bon fonctionnement du site. informations recueillies via le formulaire de contact ou par email sont destinées exclusivement à l'entreprise BRU PEINTURE pour la gestion des demandes de devis et la relation commerciale. Elles ne sont jamais transmises à des tiers. Vous disposez d'un droit d'accès, de rectification et de suppression de vos données en nous contactant par email.
-                </p>
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <div class="hero-text-box">
+                <h1>BRU Peinture - Artisan Peintre à Saint André de Cubzac</h1>
                 
-                <h2>8. Médiation de la consommation</h2>
-                <p>
-                    Conformément aux articles L.616-1 et R.616-1 du code de la consommation, le client a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d'un litige qui l'opposerait à l'artisan.
+                <p style="font-size: 1.2rem; font-weight: 500; margin-bottom: 20px; color: var(--primary-accent);">
+                    Artisan peintre en bâtiment passionné
                 </p>
 
+                <p>Je mets mon savoir-faire au service de vos projets depuis plusieurs années. Spécialisé en travaux de peinture intérieure et extérieure, je vous accompagne aussi bien en rénovation qu’en construction neuve.</p>
+                <p>Chaque chantier est réalisé avec rigueur, précision et souci du détail afin de garantir un résultat soigné et durable. À l’écoute de vos besoins, je vous conseille dans le choix des couleurs, des finitions et des matériaux pour un rendu à la hauteur de vos attentes.</p>
+                <p class="small-text"><strong>Zone d'intervention :</strong> Basé à <strong>Saint André de Cubzac</strong> (Virsac plus précisément), j’interviens dans une large zone de 40 kms autour de chez moi.</p>
+                
+                <a href="#services" class="arrow-down">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+        <div class="wave-top">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="services-circles" id="services">
+        <div class="container">
+            <div class="circle-grid">
+                <div class="circle-item">
+                    <div class="circle-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                    <h3>TRAVAUX D'INTÉRIEUR</h3>
+                </div>
+                <div class="circle-item">
+                    <div class="circle-img" style="background-image: url('https://images.unsplash.com/photo-1595846519845-68e298c2edd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                    <h3>TRAVAUX D'EXTÉRIEUR</h3>
+                </div>
+            </div>
+        </div>
+        <div class="wave-bottom">
+             <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,100 C480,0 960,0 1440,100 L1440,100 L0,100 Z" fill="rgb(35, 50, 62)"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="dark-offer" id="interieur">
+        <div class="container offer-grid">
+            <div class="offer-text">
+                <h2>Vos travaux d'intérieur : du sol au plafond</h2>
+                <p>Pour vos projets intérieurs, j'utilise des produits professionnels de qualité, respectueux des supports et adaptés à chaque environnement. Voici l'ensemble des prestations que je propose :</p>
+                <ul style="margin-bottom: 20px; padding-left: 20px; list-style: disc;">
+                    <li>Réparation de support, Rebouchage, Ratissage</li>
+                    <li>Enduit décoratif & Mise en peinture</li>
+                    <li>Pose de revêtement de murs</li>
+                    <li>Pose de revêtement de sol (parquet, PVC)</li>
+                </ul>
+                <p>Confiez-moi votre projet et bénéficiez d’un service fiable, personnalisé et réalisé avec passion.</p>
+                <a href="#contact" class="btn-white">Demander un devis</a>
+            </div>
+            
+            <div class="offer-image-box">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Rénovation intérieure soignée" class="square-img">
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
+    <section class="light-service" id="exterieur">
+        <div class="container service-grid">
+            <div class="service-text">
+                <h2>Extérieur & Engagements</h2>
+                <p>Je prends également soin de l'apparence extérieure de votre habitat. Mes compétences couvrent :</p>
+                <ul style="margin-bottom: 20px; padding-left: 20px; list-style: disc; color: var(--text-dark);">
+                    <li>Nettoyage de façade et toiture</li>
+                    <li>Mise en peinture de façade</li>
+                    <li>Mise en peinture de porte d’entrée</li>
+                    <li>Rénovation de volets</li>
+                </ul>
+                <p><strong>Mes engagements :</strong> La propreté du chantier, le respect des délais et la transparence des devis font partie de mes priorités. Mon objectif est de vous offrir un travail impeccable et une expérience sereine, du premier contact à la réception des travaux.</p>
+            </div>
+        </div>
+        <div class="wave-footer">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,120 L0,40 C300,100 800,0 1440,80 L1440,120 Z" fill="rgb(35, 50, 62)"></path>
+            </svg>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-top">
+            <i class="fas fa-phone-alt phone-icon"></i>
+            <h3>Contactez BRU Peinture pour vos projets de peinture et rénovation.</h3>
+            <a href="mailto:bru.peinture@gmail.com" class="btn-white-rounded">Me contacter</a>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-grid">
+                <div class="footer-col contact-info">
+                    <h4>CONTACT</h4>
+                    <p><i class="far fa-envelope"></i> bru.peinture@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Virsac (33240)<br>Saint André de Cubzac</p>
+                </div>
+                
+                <div class="footer-col logo-col">
+                    <div class="footer-logo">
+                         <img src="Logo Bru peinture sans fond.webp" alt="Logo BRU Peinture" class="footer-logo-img">
+                         <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                         </a>
+                    </div>
+                    <h4>HEURES D'OUVERTURE</h4>
+                    <p><i class="far fa-clock"></i> Du Lundi au Vendredi: 8h à 17h</p>
+                </div>
+                
+                <div class="footer-col call-info">
+                    <h4>APPELEZ-MOI</h4>
+                    <p class="big-phone"><i class="fas fa-phone-alt"></i> 06 15 02 17 66</p>
+                </div>
+            </div>
             <div class="copyright">
-                <p>© 2026 BRU Peinture - <a href="mentions-legales.html" style="color: inherit; text-decoration: underline;">Mentions légales</a> - par mateo.drml</p>
+                <p>© 2026 BRU Peinture - <a href="mentions-legales.html" style="color: inherit; text-decoration: underline;">Mentions légales - Protection de la vie privée - Cookies</a> - par <a href="https://www.linkedin.com/in/mateo-darrieumerlou-photographe-vid%C3%A9aste/" target="_blank" style="font-weight: bold; color: inherit;">mateo.drml</a></p>
+            </div>
+            
+            <div class="scroll-top" onclick="scrollToTop()">
+                <i class="fas fa-chevron-up"></i>
             </div>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
