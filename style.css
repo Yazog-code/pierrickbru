@@ -104,7 +104,7 @@ header {
 .burger { display: none; cursor: pointer; }
 .burger div { width: 25px; height: 3px; background-color: var(--text-dark); margin: 5px; transition: 0.3s; }
 
-/* Animation Burger */
+/* === ANIMATION BURGER EN CROIX === */
 .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
 .toggle .line2 { opacity: 0; }
 .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
@@ -178,7 +178,6 @@ header {
     width: 100%;
 }
 
-/* Grille flexible utilisée pour Intérieur (Sombre) ET Extérieur (Clair) */
 .offer-grid {
     display: flex;
     align-items: center;
@@ -186,7 +185,6 @@ header {
     gap: 60px;
 }
 
-/* Texte section sombre */
 .offer-text {
     flex: 1;
     max-width: 60%;
@@ -222,9 +220,8 @@ header {
     position: relative; overflow: hidden; width: 100%;
 }
 
-/* Texte section claire (Flex) */
 .service-text {
-    flex: 1; /* Prend la place restante dans la grille */
+    flex: 1;
     z-index: 2;
 }
 .service-text h2 { font-size: 2rem; margin-bottom: 25px; color: var(--text-dark); }
@@ -303,7 +300,7 @@ footer { color: var(--text-light); width: 100%; }
    RESPONSIVE DESIGN
    ========================================= */
 
-/* --- GRANDS ÉCRANS (Supérieurs à 1920px) --- */
+/* --- GRANDS ÉCRANS (Supérieurs à 1920px - 4K / iMac) --- */
 @media screen and (min-width: 1921px) {
     html { font-size: 120%; }
     .container { max-width: 1600px; }
@@ -311,7 +308,7 @@ footer { color: var(--text-light); width: 100%; }
     .hero-text-box { padding: 60px; max-width: 900px; }
     .circle-item { width: 400px; }
     .circle-img { width: 300px; height: 300px; }
-    .offer-grid { gap: 100px; }
+    .offer-grid, .service-grid { gap: 100px; }
     .offer-image-box { flex: 0 0 500px; width: 500px; height: 500px; }
     .offer-text p, .service-text p { max-width: 800px; line-height: 1.8; }
     .footer-top h3 { font-size: 2rem; max-width: 1000px; }
@@ -345,8 +342,7 @@ footer { color: var(--text-light); width: 100%; }
     .hero-content { width: 80%; padding-right: 0; margin: 0 auto; }
     .hero-text-box { text-align: center; background: rgba(60, 60, 60, 0.9); }
     
-    /* Passage des grilles en colonne sur tablette */
-    .offer-grid { flex-direction: column; gap: 50px; justify-content: center; }
+    .offer-grid, .service-grid { flex-direction: column; gap: 50px; justify-content: center; }
     .offer-text, .service-text { max-width: 100%; width: 100%; text-align: center; padding: 0; }
     .service-text { padding: 20px; }
     .offer-image-box { width: 80%; max-width: 500px; height: auto; aspect-ratio: 1/1; margin: 0 auto; }
