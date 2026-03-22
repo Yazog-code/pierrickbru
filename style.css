@@ -104,7 +104,15 @@ header {
 
 /* --- Dark Offer & Light Service --- */
 .dark-offer { background-color: var(--primary-dark); color: var(--text-light); padding: 80px 0 120px; position: relative; width: 100%; }
-.light-service { background: #c2c9d0; color: var(--text-dark); padding: 100px 0 150px; position: relative; overflow: hidden; width: 100%; }
+
+/* CLASSE DE BASE POUR LES SECTIONS CLAIRES */
+.light-service { color: var(--text-dark); position: relative; overflow: hidden; width: 100%; }
+
+/* CLASSE SPÉCIFIQUE : EXTÉRIEUR (Fond gris-bleu clair) */
+.light-service.exterieur { background: #c2c9d0; padding: 100px 0 0px; }
+
+/* CLASSE SPÉCIFIQUE : ENGAGEMENTS (Nouveau fond blanc) */
+.light-service.engagements { background: #ffffff; padding: 100px 0 150px; }
 
 .offer-grid { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
 .offer-text, .service-text { flex: 1; max-width: 60%; z-index: 2; }
