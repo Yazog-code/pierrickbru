@@ -109,7 +109,8 @@ header {
 .light-service { color: var(--text-dark); position: relative; overflow: hidden; width: 100%; }
 
 /* CLASSE SPÉCIFIQUE : EXTÉRIEUR (Fond gris-bleu clair) */
-.light-service.exterieur { background: #c2c9d0; padding: 100px 0 0px; }
+/* AJOUT DU PADDING TOP POUR L'ALIGNEMENT DE L'IMAGE */
+.light-service.exterieur { background: #c2c9d0; padding: 100px 0; }
 
 /* CLASSE SPÉCIFIQUE : ENGAGEMENTS (Nouveau fond blanc) */
 .light-service.engagements { background: #ffffff; padding: 100px 0 150px; }
