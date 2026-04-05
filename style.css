@@ -112,8 +112,8 @@ header {
 /* CLASSE SPÉCIFIQUE : EXTÉRIEUR */
 .light-service.exterieur { background: #c2c9d0; padding: 100px 0; }
 
-/* CLASSE SPÉCIFIQUE : ENGAGEMENTS (Même couleur grise que la section extérieur) */
-.light-service.engagements { background: #c2c9d0; padding: 10px 0 150px; }
+/* CLASSE SPÉCIFIQUE : ENGAGEMENTS (Modifiée pour le fond blanc) */
+.light-service.engagements { background: #ffffff; padding: 100px 0 150px; }
 
 .offer-grid { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
 .offer-text, .service-text { flex: 1; max-width: 60%; z-index: 2; }
